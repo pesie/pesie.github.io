@@ -7,3 +7,4 @@ setwd("/Users/preciousesie/Documents/R Projects/pesie.github.io")
 
 #render your sweet site. 
 rmarkdown::render_site()
+

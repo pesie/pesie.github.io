@@ -16,9 +16,10 @@ navbar:
       href: http://github.com/pesie
 #    - icon: fa-twitter fa-lg
 #      href: https://twitter.com/zabormetrics
-#    - icon: fa-linkedin fa-lg
-#      href: https://www.linkedin.com/in/emily-zabor-59b902b7/
-#output:
-#  html_document:
-#    theme: folio
-#    css: 'styles.css'
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/precious-e-7822a057/
+output:  
+  html_document:  
+    toc: true  
+    toc_float: true  
+    theme: yeti 
