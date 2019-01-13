@@ -8,14 +8,14 @@ navbar:
     - text: "blog"
       href: blog.html
     - text: "CV"
-      href: cv.html
+      href: CV.html
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
     - icon: fa-github fa-lg
       href: http://github.com/pesie
 #    - icon: fa-twitter fa-lg
-#      href: https://twitter.com/zabormetrics
+#      href: website
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/precious-e-7822a057/
 output:  
