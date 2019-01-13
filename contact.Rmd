@@ -9,20 +9,24 @@ title: "Let's keep in touch"
 <div class="form-group">
 <label for="inputName" class="col-lg-2 control-label">Your Name</label>
 <div class="col-lg-10">
- <input class="form-control" type="text" name="name" placeholder="Ned Stark" id="name" required>
+ <input class="form-control" type="text" name="inputName" placeholder="Ned Stark" id="name" required>
  </div>
 </div>
 
 <div class="form-group">
 <label for="inputEmail" class="col-lg-2 control-label">Your Email</label>
 <div class="col-lg-10">
-<input type="text" class="form-control" id="inputEmail" placeholder="ned@winterfell.com" required>
+<input class="form-control" type="inputEmail" id="email" placeholder="ned@winterfell.com" required>
 </div>
 </div>
 
-<div class="form-group"><label for="textArea" class="col-lg-2 control-label">Message</label>
-<div class="col-lg-10"><textarea class="form-control" rows="3" id="textArea" required>
+<div class="form-group">
+<label for="textArea" class="col-lg-2 control-label">Message</label>
+<div class="col-lg-10">
+<textarea class="form-control" rows="3" id="textArea" required>
 </textarea>
+</div>
+</div>
 
  <input class="hidden" type="text" name="_gotcha" style="display:none">
  <input class="hidden" type="hidden" name="_subject" value="Message via http://domain.com">
