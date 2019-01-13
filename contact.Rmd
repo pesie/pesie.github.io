@@ -19,6 +19,6 @@ title: "Contact me"
   <button type="submit" class="btn btn-primary">Send</button>
 </fieldset>
   <input class="hidden" type="text" name="_gotcha" style="display:none">
-  <input class="hidden" type="hidden" name="_subject" value="Message via http://domain.com">
+  <input class="hidden" type="hidden" name="_subject" value="Message via http://pesie.github.io">
 
 </form>
