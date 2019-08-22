@@ -1,5 +1,9 @@
 ---
-title: "home"
+title: "About"
 ---
 
-hello world!
+I am a PhD student in Epidemiology and a Psychiatric Epidemiology T32 pre-doctoral trainee. 
+
+My substantive research interest is in studying mechanisms through which social structures influence mental health outcomes. These social structures include place (such as neighborhood), social class, and the evolution of culture. Methodologically, I'm interested in the application of machine learning techniques towards causal inference, and addressing measurement challenges in social epidemiology.
+
+Here, you will find samples of work I've done -- as part of research projects, class assignments, or just for fun.

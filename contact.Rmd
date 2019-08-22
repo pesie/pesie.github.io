@@ -3,7 +3,6 @@ title: "Contact me"
 ---
 
 --------
-<!-- comment -->
 <form method="POST" action="https://formspree.io/precious.esie@gmail.com"> 
 <fieldset class="form-group">  
   <input class="form-control" type="name" name="name" placeholder="Your name">
