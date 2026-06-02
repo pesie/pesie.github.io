@@ -1,0 +1,51 @@
+---
+title: " "
+---
+
+### I use population and behavioral data to understand why outcomes differ across people and places.
+
+I'm a quantitative researcher trained in epidemiology. Across different topics and settings, I've stayed interested in the same challenge of figuring out what imperfect data can tell us about the world.
+
+[More about me →](about.qmd)
+
+\
+
+## How I Work
+
+**Start with the problem.**\
+Sometimes the question is already clear. Sometimes part of the work is figuring out what question should be asked in the first place. Either way, I start by understanding what decision the analysis is meant to inform.
+
+**Interrogate the data.**\
+Before running any models, I spend time understanding where the data came from and what assumptions are built into it. Most analytical errors happen here.
+
+**Choose methods that fit.**\
+Some questions require causal methods. Others are better answered with segmentation, descriptive analysis, or a well-made chart. I care more about fit than sophistication.
+
+**Interpret the evidence.**\
+Results rarely speak for themselves. Part of the job is translating findings into language that supports clear decisions, while being transparent about what the data can and cannot support.
+
+\
+
+## Projects
+
+:::: {.card .mb-4 .border-0}
+::: card-body
+#### [When Gas Prices Rise, Where Do Consumers Start Considering EVs?](ev-event-study.qmd) {.card-title .mt-0}
+
+Not all consumers respond to gas price spikes the same way. This analysis uses an event study design to examine how EV interest varies across states by charging infrastructure, income, and urbanicity.
+
+[*Event Study · Time Series · Behavioral Analytics · Data Visualization*]{.text-muted .small}
+:::
+::::
+
+:::: {.card .mb-4 .border-0}
+::: card-body
+#### [How People Navigate Uncertainty](shed-lca.qmd) {.card-title .mt-0}
+
+People facing financial uncertainty don't all respond the same way. This analysis uses Federal Reserve survey data to identify distinct patterns in how people perceive risk, buffer against shocks, and adapt their behavior.
+
+[How do you navigate uncertainty? Take the quiz →](shed-lca.qmd)
+
+[*Latent Class Analysis · Behavioral Segmentation · Survey Research*]{.text-muted .small}
+:::
+::::

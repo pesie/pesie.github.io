@@ -1,0 +1,6 @@
+---
+title: "writings"
+listing:
+  contents: writings
+  type: default
+---

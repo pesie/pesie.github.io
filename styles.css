@@ -1,0 +1,34 @@
+.navbar {
+  background-color: #000000 !important;
+}
+
+.navbar a {
+  color: #ffffff !important;
+}
+
+.navbar a:hover {
+  color: #cccccc !important;
+}
+
+.card-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Make the left entity column narrower */
+.about-entity {
+  flex-grow: 0 !important;
+  flex-shrink: 3 !important;
+  flex-basis: 20% !important; /* Adjust percentage to your liking (default is ~35%) */
+}
+
+/* Expand the right text column to fill the gap */
+.about-contents {
+  flex-grow: 3 !important;
+  flex-shrink: 0 !important;
+  flex-basis: 80% !important; /* Must complement the left column percentage */
+}
+
+.pub-journal {
+  font-size: 0.8rem;
+  color: #999;
+}
