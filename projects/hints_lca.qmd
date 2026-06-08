@@ -1,0 +1,691 @@
+---
+title: "Trust and Quality of Care Depend on How People Experience Health Information"
+subtitle: "How people experience health information helps explain differences in trust, perceived care quality, and what kind of communication support they may need."
+date: "2026-06-07"
+categories: [Latent Class Analysis, Behavioral Segmentation, Survey Research]
+description: ""
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+```{r load-data}
+# Load class assignments from saved model output
+# dat_out <- read_csv("hints_lca_v4_class_assignments.csv")
+```
+
+I've done segmentation work in health contexts where the goal is behavior change. That work kept raising the same problem — demographics can describe who people are, but they rarely explain what would actually help them.
+
+That gap is especially relevant to health information. Public health efforts often assume that if accurate information is available, people will know what to do with it. But many people are navigating a constant stream of recommendations, warnings, and advice that is difficult to make sense of, especially when messages seem to conflict or change over time.
+
+The scale of that difficulty is visible in the data. In 2024, about 70% of U.S. adults said health recommendations from experts seem to change often. Nearly three-quarters said there are so many recommendations about preventing cancer that it is hard to know which ones to follow.
+
+These are not fringe views. They are the dominant experience.
+
+The [Health Information National Trends Survey (HINTS)](https://hints.cancer.gov/data/survey-instruments.aspx#H7SurvMat) offers a way to examine that experience. HINTS is a nationally representative survey from the National Cancer Institute that asks U.S. adults about health information seeking, cancer-related knowledge and behaviors, provider communication, source trust, and health information use.
+
+The survey includes several questions about what it feels like to navigate health recommendations. Looking at those questions, two themes emerged: whether expert guidance seems inconsistent or contradictory, and whether the volume of recommendations feels overwhelming. Although these experiences may seem similar, they are not necessarily the same thing. Someone can trust experts but still feel overwhelmed by the volume of information. Others may feel less burdened by volume but question the consistency of what they hear.
+
+A factor analysis supported that distinction, where inconsistency and overload reflect separate dimensions of how people experience health information.
+
+**Expert inconsistency** (do recommendations contradict or change):
+
+* How often health recommendations from experts seem to change over time
+* How often health recommendations from experts seem to contradict each other
+
+**Information overload** (are there too many recommendations):
+
+* Whether there are so many different recommendations about preventing cancer, it's hard to know which ones to follow
+* Whether it feels like everything causes cancer
+
+### Four profiles emerged from the data
+
+I then used latent class analysis to identify whether people clustered into distinct profiles based on these responses. Among 6,435 U.S. adults, four profiles emerged.
+
+The profiles are not driven by demographics. Age, education, race, and income vary only slightly across groups. What separates them is how they experience the information environment.
+
+```{=html}
+<style>
+  .lca-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f8f7f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .lca-axis-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-left: 24px;
+  }
+  .lca-axis-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .lca-axis-line {
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+  }
+  .lca-body {
+    display: flex;
+    gap: 8px;
+  }
+  .lca-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 6px 4px 0;
+    min-width: 18px;
+  }
+  .lca-y-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+  .lca-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    flex: 1;
+  }
+  .lca-card {
+    background: white;
+    border: 0.5px solid #ddddd8;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0.875rem 1rem 0.875rem;
+  }
+  .lca-card-top {
+    height: 3px;
+    margin: -0.875rem -1rem 0.75rem;
+  }
+  .lca-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .lca-dim {
+    font-size: 12px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .lca-divider {
+    height: 0.5px;
+    background: #e8e8e4;
+    margin-bottom: 8px;
+  }
+  .lca-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lca-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .lca-item-label {
+    font-size: 11px;
+    color: #999;
+    flex: 1;
+  }
+  .lca-squares {
+    display: flex;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+  .lca-sq {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: #e0e0dc;
+  }
+  .lca-legend-note {
+    font-size: 10px;
+    color: #bbb;
+    margin-top: 10px;
+    padding-left: 24px;
+  }
+  .tbl-plain { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .tbl-plain th { font-size: 11px; font-weight: 500; color: #444; text-align: center; padding: 8px 10px 10px; border-bottom: 0.5px solid #e0e0dc; line-height: 1.4; word-wrap: break-word; }
+  .tbl-plain th.left { text-align: left; }
+  .tbl-plain td { padding: 9px 10px; text-align: center; font-size: 11px; color: #333; word-wrap: break-word; }
+  .tbl-plain td.left { text-align: left; color: #555; font-size: 12px; }
+.tbl-plain td.group-header { text-align: left; font-size: 12px; font-weight: 600; color: #444; padding-top: 14px; padding-bottom: 4px; }
+  .tbl-plain tr { border-bottom: 0.5px solid #e0e0dc; }
+  .tbl-plain tr:last-child { border-bottom: none; }
+  .tbl-plain tr.selected { background: rgba(55,138,221,0.10); font-weight: 500; }
+  .tbl-plain-wrap { border: 0.5px solid #e0e0dc; border-radius: 10px; overflow: hidden; }
+  .tbl-caption { font-size: 11px; color: #444; margin-top: 8px; padding-left: 2px; }
+  .tbl2 { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .tbl2 th { font-size: 11px; font-weight: 500; color: #888; text-align: center; padding: 8px 10px 10px; border-bottom: 0.5px solid #e0e0dc; line-height: 1.4; word-wrap: break-word; }
+  .tbl2 th.left { text-align: left; }
+  .tbl2 td { padding: 9px 10px; text-align: center; font-size: 13px; word-wrap: break-word; }
+  .tbl2 td.label { text-align: left; color: #000; font-size: 12px; }
+  .tbl2 tr { border-bottom: 0.5px solid #e0e0dc; }
+  .tbl2 tr:last-child { border-bottom: none; }
+  .tbl2-wrap { border: 0.5px solid #e0e0dc; border-radius: 10px; overflow: hidden; }
+</style>
+
+<div class="lca-wrap">
+
+  <div class="lca-axis-row">
+    <span class="lca-axis-label">← Lower conflicting signals</span>
+    <div class="lca-axis-line"></div>
+    <span class="lca-axis-label">Higher conflicting signals →</span>
+  </div>
+
+  <div class="lca-body">
+
+    <div class="lca-y-axis">
+      <span class="lca-y-label">Higher overload →</span>
+      <span class="lca-y-label">← Lower overload</span>
+    </div>
+
+    <div class="lca-grid">
+
+      <!-- Class 2: top-left — lower inconsistency, higher overload -->
+      <!-- Conflict 25.3% (1sq), Change 0% (0sq), TooMany 100% (4sq), Everything 100% (4sq) -->
+      <div class="lca-card">
+        <div class="lca-card-top" style="background:#5DCAA5;"></div>
+        <span class="lca-tag" style="background:#E1F5EE; color:#0F6E56;">Class 2 &middot; 42.7%</span>
+        <div class="lca-dim">Lower conflicting signals<br>Higher information overload</div>
+        <div class="lca-divider"></div>
+        <div class="lca-items">
+          <div class="lca-item">
+            <span class="lca-item-label">Experts give conflicting health advice</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Expert health recommendations keep changing</span>
+            <div class="lca-squares">
+              <div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Too many cancer recommendations to follow</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Everything seems to cause cancer</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+              <div class="lca-sq" style="background:#5DCAA5;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Class 4: top-right — higher inconsistency, higher overload -->
+      <!-- Conflict 77.5% (4sq), Change 100% (4sq), TooMany 100% (4sq), Everything 100% (4sq) -->
+      <div class="lca-card">
+        <div class="lca-card-top" style="background:#AFA9EC;"></div>
+        <span class="lca-tag" style="background:#EEEDFE; color:#3C3489;">Class 4 &middot; 14.3%</span>
+        <div class="lca-dim">Higher conflicting signals<br>Higher information overload</div>
+        <div class="lca-divider"></div>
+        <div class="lca-items">
+          <div class="lca-item">
+            <span class="lca-item-label">Experts give conflicting health advice</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Expert health recommendations keep changing</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Too many cancer recommendations to follow</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Everything seems to cause cancer</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+              <div class="lca-sq" style="background:#AFA9EC;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Class 1: bottom-left — lower inconsistency, lower overload -->
+      <!-- Conflict 0% (0sq), Change 0% (0sq), TooMany 34.9% (2sq), Everything 26.7% (2sq) -->
+      <div class="lca-card">
+        <div class="lca-card-top" style="background:#85B7EB;"></div>
+        <span class="lca-tag" style="background:#E6F1FB; color:#185FA5;">Class 1 &middot; 27.7%</span>
+        <div class="lca-dim">Lower conflicting signals<br>Lower information overload</div>
+        <div class="lca-divider"></div>
+        <div class="lca-items">
+          <div class="lca-item">
+            <span class="lca-item-label">Experts give conflicting health advice</span>
+            <div class="lca-squares">
+              <div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Expert health recommendations keep changing</span>
+            <div class="lca-squares">
+              <div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Too many cancer recommendations to follow</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#85B7EB;"></div>
+              <div class="lca-sq" style="background:#85B7EB;"></div>
+              <div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Everything seems to cause cancer</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#85B7EB;"></div>
+              <div class="lca-sq" style="background:#85B7EB;"></div>
+              <div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Class 3: bottom-right — higher inconsistency, lower overload -->
+      <!-- Conflict 69.4% (3sq), Change 89.3% (4sq), TooMany 40.9% (2sq), Everything 28.5% (2sq) -->
+      <div class="lca-card">
+        <div class="lca-card-top" style="background:#FAC775;"></div>
+        <span class="lca-tag" style="background:#FAEEDA; color:#633806;">Class 3 &middot; 15.4%</span>
+        <div class="lca-dim">Higher conflicting signals<br>Lower information overload</div>
+        <div class="lca-divider"></div>
+        <div class="lca-items">
+          <div class="lca-item">
+            <span class="lca-item-label">Experts give conflicting health advice</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Expert health recommendations keep changing</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Too many cancer recommendations to follow</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+          <div class="lca-item">
+            <span class="lca-item-label">Everything seems to cause cancer</span>
+            <div class="lca-squares">
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq" style="background:#FAC775;"></div>
+              <div class="lca-sq"></div><div class="lca-sq"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="lca-legend-note">Squares filled: 0 = &lt;1% &nbsp;&nbsp; 1 = 1–25% &nbsp;&nbsp; 2 = 26–50% &nbsp;&nbsp; 3 = 51–75% &nbsp;&nbsp; 4 = 76–100%</div>
+
+</div>
+```
+
+### People who struggle with health information trust the system less and rate their care lower
+
+The four groups differed substantially in both trust and perceived care quality.
+
+People reporting the lowest levels of inconsistency and overload (Class 1) reported the highest trust across nearly every measure. More than 80% trusted doctors a lot, about half trusted the healthcare system a lot, and over one-quarter rated their care as excellent.
+
+At the other end of the spectrum, people reporting the highest levels of both inconsistency and overload (Class 4) reported the lowest trust and lowest perceived care quality. Trust in the healthcare system was cut roughly in half compared with Class 1, and fewer than one in five rated their care as excellent.
+
+The largest group occupied a middle ground. These individuals reported feeling overwhelmed by health information but were not the most distrustful. Their responses suggest that information burden and skepticism do not always go hand in hand.
+
+While the four groups differ in important ways, the broader pattern is straightforward: people who experience the health information environment as more chaotic tend to report lower trust and worse care experiences.
+
+```{=html}
+<div class="tbl2-wrap">
+<table class="tbl2">
+  <colgroup>
+    <col style="width:32%">
+    <col style="width:17%">
+    <col style="width:17%">
+    <col style="width:17%">
+    <col style="width:17%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="left"></th>
+      <th><span style="color:#000;font-weight:600;">Class 1<br>Lower inconsistency<br>Lower overload<br><span style="font-weight:400;color:#444">27.7%</span></th>
+      <th><span style="color:#000;font-weight:600;">Class 2<br>Lower inconsistency<br>Higher overload<br><span style="font-weight:400;color:#444">42.7%</span></th>
+      <th><span style="color:#000;font-weight:600;">Class 3<br>Higher inconsistency<br>Lower overload<br><span style="font-weight:400;color:#444">15.4%</span></th>
+      <th><span style="color:#000;font-weight:600;">Class 4<br>Higher inconsistency<br>Higher overload<br><span style="font-weight:400;color:#444">14.3%</span></th>
+    </tr>
+  </thead>
+  <tbody id="outcome-tbl-body"></tbody>
+</table>
+</div>
+<p class="tbl-caption">Survey-weighted percentages. Color intensity within each row encodes relative value.</p>
+
+<script>
+(function() {
+  var rows = [
+    { label: "Care quality: Excellent",           vals: [27.6, 26.7, 22.8, 17.5] },
+    { label: "Trust: Healthcare system (a lot)",  vals: [51.7, 44.7, 34.7, 24.9] },
+    { label: "Trust: Doctors (a lot)",            vals: [81.1, 76.6, 71.1, 67.5] },
+    { label: "Trust: Government (a lot)",         vals: [43.1, 30.3, 31.7, 18.7] },
+    { label: "Trust: Scientists (a lot)",         vals: [68.2, 54.9, 55.8, 50.5] }
+  ];
+  var ramp = [
+    "rgba(55,138,221,0.08)",
+    "rgba(55,138,221,0.20)",
+    "rgba(55,138,221,0.38)",
+    "rgba(55,138,221,0.60)"
+  ];
+  var tbody = document.getElementById("outcome-tbl-body");
+  rows.forEach(function(row) {
+    var sorted = row.vals.slice().sort(function(a,b) { return a - b; });
+    var tr = document.createElement("tr");
+    var td0 = document.createElement("td");
+    td0.className = "label";
+    td0.textContent = row.label;
+    tr.appendChild(td0);
+    row.vals.forEach(function(v) {
+      var rank = sorted.indexOf(v);
+      var td = document.createElement("td");
+      td.textContent = v.toFixed(1) + "%";
+      td.style.background = ramp[rank];
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+```
+
+### Most people feel overwhelmed. Fewer perceive conflicting guidance. Both matter.
+
+Information overload is the more common experience. Nearly six in ten adults fall into one of the high overload groups, Classes 2 and 4. Perceived inconsistency is less common: about three in ten adults fall into one of the high inconsistency groups, Classes 3 and 4.
+
+But inconsistency appears more strongly tied to distrust than overload. Compared with adults reporting low levels of both overload and inconsistency, trust in the healthcare system was 7 percentage points lower among those with high overload but low inconsistency (44.7% vs. 51.7%). Trust was 17 percentage points lower among those with low overload but high inconsistency (34.7% vs. 51.7%). In other words, inconsistency is associated with a much larger drop in trust than overload alone. Adults experiencing both high overload and high inconsistency report the lowest trust and care ratings of any group, suggesting that the combination of these challenges may be especially pronounced.
+
+For organizations communicating health information, reducing information burden may help the largest share of the public, but rebuilding trust requires coherence. People need clearer signals about what matters most, why guidance changes, and how to act when recommendations appear to conflict.
+
+
+
+::: {.callout-note collapse="true" appearance=simple}
+### Try it: Where would you fall? Expand to take quiz.
+The quiz below is a simplified approximation of the four profiles, not a recreation of the latent class model. It uses the same four concepts, but scores them as two dimensions: inconsistency and overload
+
+```{=html}
+<div id="quiz" style="border:0.5px solid #ddd; border-radius:8px; padding:1.5rem; margin:1.5rem 0; font-family:sans-serif;">
+  <p style="font-size:13px; color:#666; margin-bottom:1.25rem;">Answer four questions to estimate your health information profile.</p>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:14px; font-weight:500; margin-bottom:0.5rem;">1. How often do health recommendations from experts seem to contradict each other?</p>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q1" value="0"> Never</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q1" value="1"> Rarely</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q1" value="2"> Often</label>
+    <label style="display:block; font-size:13px;"><input type="radio" name="q1" value="3"> Very often</label>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:14px; font-weight:500; margin-bottom:0.5rem;">2. How often do health recommendations seem to change so often it is hard to know what to do?</p>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q2" value="0"> Never</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q2" value="1"> Rarely</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q2" value="2"> Often</label>
+    <label style="display:block; font-size:13px;"><input type="radio" name="q2" value="3"> Very often</label>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:14px; font-weight:500; margin-bottom:0.5rem;">3. There are so many health recommendations, it is hard to know which ones to follow.</p>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q3" value="0"> Strongly disagree</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q3" value="1"> Somewhat disagree</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q3" value="2"> Somewhat agree</label>
+    <label style="display:block; font-size:13px;"><input type="radio" name="q3" value="3"> Strongly agree</label>
+  </div>
+
+  <div style="margin-bottom:1.25rem;">
+    <p style="font-size:14px; font-weight:500; margin-bottom:0.5rem;">4. It seems like everything causes cancer.</p>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q4" value="0"> Strongly disagree</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q4" value="1"> Somewhat disagree</label>
+    <label style="display:block; font-size:13px; margin-bottom:4px;"><input type="radio" name="q4" value="2"> Somewhat agree</label>
+    <label style="display:block; font-size:13px;"><input type="radio" name="q4" value="3"> Strongly agree</label>
+  </div>
+
+  <button onclick="scoreQuiz()" style="background:#008cba; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
+
+  <div id="quiz-result" style="display:none; margin-top:1.25rem; padding:1rem; border-radius:6px; font-size:13px; line-height:1.6;"></div>
+</div>
+
+<script>
+function getValue(name) {
+  const selected = document.querySelector(`input[name="${name}"]:checked`);
+  return selected ? Number(selected.value) : null;
+}
+
+function scoreQuiz() {
+  const q1 = getValue("q1");
+  const q2 = getValue("q2");
+  const q3 = getValue("q3");
+  const q4 = getValue("q4");
+
+  if ([q1, q2, q3, q4].some(v => v === null)) {
+    alert("Please answer all four questions.");
+    return;
+  }
+
+  const inconsistencyScore = q1 + q2;
+  const burdenScore = q3 + q4;
+  const inconsistency = inconsistencyScore >= 3 ? "high" : "low";
+  const burden = burdenScore >= 3 ? "high" : "low";
+
+  const profiles = {
+    "low-low": {
+      label: "Lower inconsistency / Lower overload",
+      pct: "27.7% of the sample",
+      desc: "You experience health information as relatively stable and manageable. You report the strongest trust in health institutions and the highest quality of care perception of any group."
+    },
+    "low-high": {
+      label: "Lower inconsistency / Higher overload",
+      pct: "42.7% of the sample",
+      desc: "Recommendations do not necessarily feel contradictory, but there are too many of them. You still trust your doctor, but the experience of navigating endless advice may undermine your sense that you are receiving good care."
+    },
+    "high-low": {
+      label: "Higher inconsistency / Lower overload",
+      pct: "15.4% of the sample",
+      desc: "You notice contradiction or change in health recommendations, but the information environment does not feel fully overwhelming. The communication challenge is coherence: a clearer explanation of why guidance changes and how to distinguish a real reversal from a routine update."
+    },
+    "high-high": {
+      label: "Higher inconsistency / Higher overload",
+      pct: "14.3% of the sample",
+      desc: "You experience health recommendations as contradictory, changing, numerous, and hard to prioritize. You report the lowest trust in health institutions and the lowest quality of care perception of any group."
+    }
+  };
+
+  const key = `${inconsistency}-${burden}`;
+  const result = profiles[key];
+  const div = document.getElementById("quiz-result");
+  div.style.display = "block";
+  div.style.background = "#F4F3FE";
+  div.style.border = "0.5px solid #7F77DD";
+  div.innerHTML = `
+    <strong style="font-size:14px;">${result.label}</strong>
+    <span style="font-size:11px; color:#888; margin-left:8px;">${result.pct}</span>
+    <p style="margin-top:0.75rem; margin-bottom:0;">${result.desc}</p>
+  `;
+}
+</script>
+```
+:::
+
+### What this can and can't tell us
+
+This is a cross-sectional study. It can show that these profiles exist and that they differ on outcomes that matter. It cannot show whether high information overload causes lower trust or lower perceived care quality, or whether people who already struggle with health information are more likely to feel overwhelmed. The arrow of causation is not visible here.
+
+That said, the analysis suggests that people's experiences of the health information environment vary in meaningful ways, are associated with trust and perceived care quality, and are not captured by demographic characteristics alone.
+
+---
+
+*Full analysis code available on [GitHub](https://github.com/pesie).*
+
+### Appendix
+
+::: {.callout-note collapse="true" appearance="minimal"}
+#### A. Demographic profile
+
+The table below shows the demographic and behavioral profile of each class. These differences help describe the groups, but they do not define them.
+
+```{=html}
+<div class="tbl-plain-wrap">
+<table class="tbl-plain">
+  <colgroup>
+    <col style="width:32%">
+    <col style="width:17%">
+    <col style="width:17%">
+    <col style="width:17%">
+    <col style="width:17%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="left"></th>
+      <th><span style="color:#000;font-weight:600;">Class 1<br>Lower inconsistency<br>Lower overload<br><span style="font-weight:400;color:#444">27.7%</span></th>
+      <th><span style="color:#000;font-weight:600;">Class 2<br>Lower inconsistency<br>Higher overload<br><span style="font-weight:400;color:#444">42.7%</span></th>
+      <th><span style="color:#000;font-weight:600;">Class 3<br>Higher inconsistency<br>Lower overload<br><span style="font-weight:400;color:#444">15.4%</span></th>
+      <th><span style="color:#000;font-weight:600;">Class 4<br>Higher inconsistency<br>Higher overload<br><span style="font-weight:400;color:#444">14.3%</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="group-header" colspan="5">Age</td></tr>
+    <tr><td class="left">18–34</td><td>27.5%</td><td>24.2%</td><td>23.1%</td><td>27.0%</td></tr>
+    <tr><td class="left">35–49</td><td>24.4%</td><td>28.2%</td><td>23.8%</td><td>27.7%</td></tr>
+    <tr><td class="left">50–64</td><td>25.6%</td><td>26.3%</td><td>28.2%</td><td>25.6%</td></tr>
+    <tr><td class="left">65 or older</td><td>22.6%</td><td>21.4%</td><td>24.9%</td><td>19.7%</td></tr>
+    <tr><td class="group-header" colspan="5">Socioeconomic status</td></tr>
+    <tr><td class="left">College educated</td><td>34.0%</td><td>26.0%</td><td>41.0%</td><td>32.2%</td></tr>
+    <tr><td class="left">Low income (under $35,000)</td><td>31.7%</td><td>29.6%</td><td>24.8%</td><td>24.1%</td></tr>
+    <tr><td class="group-header" colspan="5">Race and ethnicity</td></tr>
+    <tr><td class="left">Non-Hispanic White</td><td>51.8%</td><td>55.7%</td><td>62.2%</td><td>64.4%</td></tr>
+    <tr><td class="left">Non-Hispanic Black</td><td>13.1%</td><td>10.1%</td><td>10.0%</td><td>11.1%</td></tr>
+    <tr><td class="left">Hispanic</td><td>18.1%</td><td>23.5%</td><td>15.5%</td><td>16.3%</td></tr>
+    <tr><td class="group-header" colspan="5">Health and behavior</td></tr>
+    <tr><td class="left">Fair or poor self-rated health</td><td>13.5%</td><td>19.4%</td><td>17.1%</td><td>17.6%</td></tr>
+    <tr><td class="left">Frequent social media use</td><td>61.1%</td><td>67.2%</td><td>59.7%</td><td>70.7%</td></tr>
+    <tr><td class="group-header" colspan="5">Political viewpoint</td></tr>
+    <tr><td class="left">Liberal</td><td>36.4%</td><td>33.7%</td><td>33.6%</td><td>25.5%</td></tr>
+    <tr><td class="left">Moderate</td><td>36.4%</td><td>39.8%</td><td>34.1%</td><td>39.7%</td></tr>
+    <tr><td class="left">Conservative</td><td>27.2%</td><td>26.5%</td><td>32.3%</td><td>34.9%</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="tbl-caption">Survey-weighted column percentages.</p>
+```
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+#### B. Variable selection
+The segmentation uses four variables from HINTS 7. Two capture perceived inconsistency: A4 ("How often do health recommendations from experts seem to conflict or contradict one another?") and A5 ("How often do health recommendations from experts seem to change over time?"). Two capture perceived overload: P1c ("There are so many different recommendations about preventing cancer, it's hard to know which ones to follow") and P1a ("It seems like everything causes cancer"). Variables were selected because they directly capture how people experience the health information environment.
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+#### C. Model selection
+```{=html}
+<div class="tbl-plain-wrap" style="max-width:420px;">
+<table class="tbl-plain">
+  <colgroup>
+    <col style="width:20%">
+    <col style="width:27%">
+    <col style="width:27%">
+    <col style="width:26%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Classes</th>
+      <th>Log-likelihood</th>
+      <th>AIC</th>
+      <th>BIC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>2</td><td>-15,414</td><td>30,846</td><td>30,907</td></tr>
+    <tr><td>3</td><td>-15,250</td><td>30,527</td><td>30,622</td></tr>
+    <tr class="selected"><td>4</td><td>-15,198</td><td>30,435</td><td>30,564</td></tr>
+    <tr><td>5</td><td>-15,198</td><td>30,445</td><td>30,608</td></tr>
+    <tr><td>6</td><td>-15,198</td><td>30,455</td><td>30,651</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="tbl-caption">Selected model highlighted. A four-class solution was selected based on fit and interpretability.</p>
+```
+
+LCA models with 2 through 6 classes were estimated using the `poLCA` package in R with `nrep = 10` and `maxiter = 3000`. Four classes were selected on the basis of model fit and interpretability.
+
+LCA was retained over a simple cross-tabulation because roughly 10% of respondents would have been assigned differently under a simple two-dimension cross-tabulation approach.
+:::
+::: {.callout-note collapse="true" appearance="minimal"}
+#### D. Sample
+The analytic sample excludes respondents with missing data on any segmentation or profiling variable (n = 843 excluded from the raw sample of 7,278). Missingness was broadly consistent across demographic groups and across classes, suggesting limited selection bias.
+:::
