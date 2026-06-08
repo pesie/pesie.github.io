@@ -47,11 +47,3 @@ body {
   font-size: 16px;
 }
 
-.callout-purple {
-  border-left-color: #7F77DD;
-}
-
-.callout-purple .callout-header {
-  background-color: #EEEDFE;
-  color: #3C3489;
-}

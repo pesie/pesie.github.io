@@ -21,3 +21,4 @@ format:
   html:
     theme: yeti
     css: styles.css
+    google-analytics: "G-B5EX75MDD2"

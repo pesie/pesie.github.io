@@ -613,7 +613,7 @@ Higher overload<br>
 <p>Information overload is the more common experience. Nearly six in ten adults fall into one of the high overload groups, Classes 2 and 4. Perceived inconsistency is less common: about three in ten adults fall into one of the high inconsistency groups, Classes 3 and 4.</p>
 <p>But inconsistency appears more strongly tied to distrust than overload. Compared with adults reporting low levels of both overload and inconsistency, trust in the healthcare system was 7 percentage points lower among those with high overload but low inconsistency (44.7% vs.&nbsp;51.7%). Trust was 17 percentage points lower among those with low overload but high inconsistency (34.7% vs.&nbsp;51.7%). In other words, inconsistency is associated with a much larger drop in trust than overload alone. Adults experiencing both high overload and high inconsistency report the lowest trust and care ratings of any group, suggesting that the combination of these challenges may be especially pronounced.</p>
 <p>For organizations communicating health information, reducing information burden may help the largest share of the public, but rebuilding trust requires coherence. People need clearer signals about what matters most, why guidance changes, and how to act when recommendations appear to conflict.</p>
-<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -661,7 +661,7 @@ Try it: Where would you fall? Expand to take quiz.
     <label style="display:block; font-size:13px;"><input type="radio" name="q4" value="3"> Strongly agree</label>
   </div>
 
-  <button onclick="scoreQuiz()" style="background:#7F77DD; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
+  <button onclick="scoreQuiz()" style="background:#008cba; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
 
   <div id="quiz-result" style="display:none; margin-top:1.25rem; padding:1rem; border-radius:6px; font-size:13px; line-height:1.6;"></div>
 </div>
@@ -715,8 +715,8 @@ function scoreQuiz() {
   const result = profiles[key];
   const div = document.getElementById("quiz-result");
   div.style.display = "block";
-  div.style.background = "#F4F3FE";
-  div.style.border = "0.5px solid #7F77DD";
+  div.style.background = "#E6F1FB";
+  div.style.border = "0.5px solid #008cba";
   div.innerHTML = `
     <strong style="font-size:14px;">${result.label}</strong>
     <span style="font-size:11px; color:#888; margin-left:8px;">${result.pct}</span>
