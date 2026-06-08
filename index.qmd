@@ -8,37 +8,34 @@ I'm a quantitative researcher trained in social epidemiology. Across different t
 
 [More about me →](about.qmd)
 
-::: {.py-3}
-
+:::::::: py-3
 #### How I Work
 
 I start by understanding what decision the analysis is meant to inform. Before running models, I examine where the data came from and what assumptions are built into it. Some questions require causal methods. Others are better answered with segmentation, a descriptive analysis, or a clear chart. Results rarely speak for themselves, so part of the work is translating findings into language that supports decisions while being honest about what the data can and cannot support.
 
-::: {.py-3}
-
+::: py-3
 #### Selected Work
 :::
-::: {.featured-project}
 
-[Most People Feel Overwhelmed. Fewer Perceive Conflicting Guidance. Both Matter.](projects/hints_lca.qmd) 
+::: featured-project
+[Most People Feel Overwhelmed. Fewer Perceive Conflicting Guidance. Both Matter.](projects/hints_lca.qmd)
 
 Using nationally representative survey data, this analysis identifies four ways people navigate health information and examines how those differences relate to trust and perceived care quality.
 
 [Latent Class Analysis · Behavioral Segmentation · Survey Research]{.text-muted .small}
 :::
 
-::: {.py-3}
-
+::: py-3
 #### Notes
 :::
-::: {.featured-project}
+
+::: featured-project
 [We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
 
 A short translation guide for business questions about causality, bias, measurement, and risk.
 :::
 
-::: {.py-3}
-
+::: py-3
 #### Publications
 
 18 peer-reviewed publications, including 9 as first author.
@@ -46,5 +43,5 @@ A short translation guide for business questions about causality, bias, measurem
 Recent work has appeared in *American Journal of Public Health*, *Journal of Studies on Alcohol and Drugs*, *MMWR*, *Public Health Reports*, and *Epidemiologic Reviews*.
 
 [View all publications →](publications.qmd)
-
 :::
+::::::::
