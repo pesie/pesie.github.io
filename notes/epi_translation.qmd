@@ -18,7 +18,26 @@ Here are a few examples.
 ::: {.py-2}
 
 ```{=html}
-<table class="table">
+<style>
+.translation-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.translation-table thead th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.5rem 0.75rem;
+}
+.translation-table tbody td {
+  padding: 0.6rem 0.75rem;
+  border: none;
+  vertical-align: top;
+}
+</style>
+
+<table class="translation-table">
   <thead>
     <tr>
       <th>Practical question</th>
