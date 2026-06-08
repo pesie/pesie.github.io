@@ -17,7 +17,7 @@ website:
         href: https://www.linkedin.com/in/precious-esie
         target: _blank
   page-footer:
-    center: "© 2026 Precious Esie · [LinkedIn](https://www.linkedin.com/in/precious-esie) · Made with [Quarto](https://quarto.org)"
+    center: "© 2026 Precious Esie · Made with [Quarto](https://quarto.org)"
 format:
   html:
     theme: yeti
