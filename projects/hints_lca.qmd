@@ -476,7 +476,7 @@ For organizations communicating health information, reducing information burden 
 
 
 
-::: {.callout-note .callout-purple collapse="true" appearance="simple"}
+::: {.callout-note collapse="true"}
 ### Try it: Where would you fall? Expand to take quiz.
 The quiz below is a simplified approximation of the four profiles, not a recreation of the latent class model. It uses the same four concepts, but scores them as two dimensions: inconsistency and overload
 
@@ -516,7 +516,7 @@ The quiz below is a simplified approximation of the four profiles, not a recreat
     <label style="display:block; font-size:13px;"><input type="radio" name="q4" value="3"> Strongly agree</label>
   </div>
 
-  <button onclick="scoreQuiz()" style="background:#7F77DD; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
+  <button onclick="scoreQuiz()" style="background:#008cba; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
 
   <div id="quiz-result" style="display:none; margin-top:1.25rem; padding:1rem; border-radius:6px; font-size:13px; line-height:1.6;"></div>
 </div>
@@ -570,8 +570,8 @@ function scoreQuiz() {
   const result = profiles[key];
   const div = document.getElementById("quiz-result");
   div.style.display = "block";
-  div.style.background = "#F4F3FE";
-  div.style.border = "0.5px solid #7F77DD";
+  div.style.background = "#E6F1FB";
+  div.style.border = "0.5px solid #008cba";
   div.innerHTML = `
     <strong style="font-size:14px;">${result.label}</strong>
     <span style="font-size:11px; color:#888; margin-left:8px;">${result.pct}</span>
