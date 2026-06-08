@@ -3,6 +3,7 @@ project:
   output-dir: docs
 website:
   title: "Precious Esie, PhD"
+  google-analytics: "G-B5EX75MDD2"
   navbar:
     left:
       - href: index.qmd
@@ -21,4 +22,3 @@ format:
   html:
     theme: yeti
     css: styles.css
-    google-analytics: "G-B5EX75MDD2"
