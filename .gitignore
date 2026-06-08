@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-*.jpeg
 .DS_Store
 *.png
 *.pdf
@@ -12,3 +11,4 @@
 trash/
 /.quarto/
 _site/
+headshot.jpeg
