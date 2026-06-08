@@ -160,9 +160,11 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 </header>
 
 
-<p>I’ve spent most of my career asking some version of the same question: why do outcomes differ across people, and can we trust the data telling us that they do?</p>
-<p>That question sits at the center of epidemiology. It also shows up in practical settings where the data exists but the answer is not obvious, or where an apparent pattern may not reflect what is actually happening.</p>
-<p>The terminology is different. The underlying problems often aren’t.</p>
+<p>I’ve spent most of my career trying to answer some version of the same question: why do outcomes differ across people, and can we actually trust the data telling us that they do?</p>
+<p>That’s the center of epidemiology. But it also shows up constantly in product, strategy, evaluation, analytics, and basically anywhere decisions depend on drawing reliable conclusions from messy data.</p>
+<p>A lot of those questions are ones epidemiologists are trained to answer. We just use different words for them.</p>
+<p>Here are a few examples.</p>
+<div class="py-2">
 <table class="table caption-top" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -201,66 +203,57 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
-<section id="did-the-campaign-work" class="level3">
+</div>
+<section id="did-the-campaign-work" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="did-the-campaign-work">Did the campaign work?</h3>
-<p>Before giving credit to an intervention, you have to rule out everything else that changed at the same time. Sales went up, but was that the campaign? Or was it seasonality or a competitor who exited the market?</p>
-<p>An epidemiologist would ask, what would have happened if the intervention had never occurred?</p>
+<p>Before giving credit to an intervention, you have to rule out everything else that changed at the same time. Sales went up, but was that the campaign? Or was it seasonality, or a competitor who exited the market?</p>
+<p>An epidemiologist would ask, what would have happened if the intervention never occurred?</p>
 <p><code>Difference-in-differences</code> · <code>Interrupted time series</code></p>
 </section>
-<div class="py-2">
-<section id="these-two-things-move-together.-does-one-cause-the-other" class="level3">
+<section id="these-two-things-move-together.-does-one-cause-the-other" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="these-two-things-move-together.-does-one-cause-the-other">These two things move together. Does one cause the other?</h3>
 <p>Association is often the start of the analysis, not the conclusion.</p>
 <p>Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more may also have higher incomes, better access to healthcare, and healthier diets.</p>
 <p>A third factor can make two things appear connected even when one is not driving the other.</p>
 <p><code>Confounding assessment</code> · <code>Causal inference</code> · <code>Sensitivity analysis</code></p>
 </section>
-<div class="py-2">
-<section id="why-does-this-work-better-for-some-groups-than-others" class="level3">
+<section id="why-does-this-work-better-for-some-groups-than-others" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="why-does-this-work-better-for-some-groups-than-others">Why does this work better for some groups than others?</h3>
 <p>An average effect can hide everything interesting. The same product, campaign, or policy can work differently depending on who is receiving it, and sometimes that variation is the finding.</p>
-<p>Understanding heterogeneity is often more useful than understanding the average.</p>
+<p>Knowing who it works for is often more useful than knowing whether it works on average.</p>
 <p><code>Interaction terms</code> · <code>Stratified analyses</code></p>
 </section>
-<div class="py-2">
-<section id="can-we-trust-this-metric" class="level3">
+<section id="can-we-trust-this-metric" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="can-we-trust-this-metric">Can we trust this metric?</h3>
 <p>Before acting on a measure, it’s worth asking how it was constructed, what it captures, and what it might be excluding.</p>
-<p>This applies as much to customer satisfaction scores and engagement metrics as it does to health surveys and surveillance systems.</p>
+<p>The same question applies whether you’re looking at a customer satisfaction score or a disease surveillance system.</p>
 <p><code>Validation studies</code> · <code>Measurement error assessment</code></p>
 </section>
-<div class="py-2">
-<section id="are-the-people-giving-us-feedback-representative" class="level3">
+<section id="are-the-people-giving-us-feedback-representative" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="are-the-people-giving-us-feedback-representative">Are the people giving us feedback representative?</h3>
 <p>The people in your data are not necessarily representative of the people you care about.</p>
-<p>Survey respondents differ from nonrespondents. Early adopters differ from later users. People who seek out a service differ from those who never enter the system.</p>
-<p>A big source of bias is often who’s missing.</p>
+<p>People who respond to a survey differ from people who don’t. Early adopters differ from later users. People who seek out a service differ from those who never enter the system.</p>
+<p>A big source of bias is often who we’re missing.</p>
 <p><code>Selection bias</code> · <code>Weighting</code> · <code>Missing data methods</code></p>
 </section>
-<div class="py-2">
-<section id="who-is-most-likely-to-churn-convert-or-become-high-cost" class="level3">
+<section id="who-is-most-likely-to-churn-convert-or-become-high-cost" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="who-is-most-likely-to-churn-convert-or-become-high-cost">Who is most likely to churn, convert, or become high-cost?</h3>
 <p>Many decisions depend on identifying who is most likely to experience an event before it happens and understanding what predicts that transition.</p>
-<p>The outcome itself might be different, but the problem remains the same.</p>
+<p>The outcome is different depending on the industry, but the problems and how we solve them are the same.</p>
 <p><code>Risk prediction</code> · <code>Survival analysis</code> · <code>Longitudinal modeling</code></p>
 </section>
 <section id="what-meaningful-groups-exist" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="what-meaningful-groups-exist">What meaningful groups exist?</h3>
 <p>People don’t behave as one homogeneous group, and they don’t always sort neatly into the categories we’d expect.</p>
 <p>Sometimes the most useful insight comes from identifying groups of people who share patterns of behavior, attitudes, or needs, especially when those groups don’t map onto obvious demographic categories.</p>
-<p><code>Latent class analysis</code> · <code>Clustering</code></p>
-<div class="py-2">
-<p>Epidemiology is formally defined as the study of disease distribution and determinants in populations. In practice, it is also a way of thinking about evidence: why outcomes differ, whether a pattern is real, and what can reasonably be concluded from imperfect data.</p>
-<p>Those tools travel.</p>
-
-
-</div>
 </section>
+<p><code>Latent class analysis</code> · <code>Clustering</code></p>
+<div class="py-3">
+<p>Epidemiology is technically the study of disease distribution and determinants in populations. But in practice, it’s a set of tools for figuring out why outcomes differ and whether what you’re seeing is real.</p>
+<p>Those tools travel.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

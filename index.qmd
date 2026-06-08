@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "&nbsp;"
 ---
 
 #### I use population and behavioral data to make sense of why outcomes differ across people and places.
@@ -32,7 +32,7 @@ Using nationally representative survey data, this analysis identifies four ways 
 ::: featured-project
 [We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
 
-A short translation guide for business questions about causality, bias, measurement, and risk.
+Epidemiologic translations for common analytical questions.
 :::
 
 ::: py-3
