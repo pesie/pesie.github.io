@@ -1,7 +1,0 @@
----
-title: "Why I Don't Segment on Demographics"
-date: 2024-01-01
-draft: true
----
-
-Coming soon.

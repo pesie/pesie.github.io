@@ -4,5 +4,12 @@
 .Ruserdata
 *.jpeg
 .DS_Store
-
+*.png
+*.pdf
+*.csv
+*.rda
+*.history
+trash/
 /.quarto/
+_site/
+*.html
