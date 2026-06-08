@@ -1,6 +1,6 @@
 project:
   type: website
-
+  output-dir: docs
 website:
   title: "Precious Esie, PhD"
   navbar:
@@ -21,4 +21,3 @@ format:
   html:
     theme: yeti
     css: styles.css
-output-dir: docs
