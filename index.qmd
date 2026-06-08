@@ -33,7 +33,8 @@ Using nationally representative survey data, this analysis identifies four ways 
 :::
 ::: {.featured-project}
 [We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
-A translation guide for what epidemiologists call the questions that show up across industries
+
+A short translation guide for business questions about causality, bias, measurement, and risk.
 :::
 
 ::: {.py-3}

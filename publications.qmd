@@ -3,23 +3,31 @@ title: "Selected Publications"
 ---
 For a full list, please see my [Google Scholar profile →](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=GOFQKMIAAAAJ)
 
-------------------------------------------------------------------------
+::: {.py-3}
 
 [**Sex Gaps in Cannabis Use and Cannabis Use Disorder (2025)**](https://doi.org/10.15288/jsad.25-00092)\
 [*Journal of Studies on Alcohol and Drugs*]{.pub-journal}\
 Are sex differences in cannabis use and cannabis use disorder changing over time? Using national survey data from 2014 to 2023, this study tracked prevalence trends by sex and age group. By 2022, adolescent females had surpassed males in past-month cannabis use, a reversal of a longstanding pattern.
 
+::: {.py-3}
+
 [**Depression Within the US Black Population (2023)**](https://doi.org/10.1093/epirev/mxad006)\
 [*Epidemiologic Reviews*]{.pub-journal}\
 Does treating the US Black population as a single group obscure meaningful differences in depression? This review synthesized decades of research across Black ethnic and immigrant groups. It found substantial variation by nativity, region of birth, and Caribbean origin, and argued for better data collection and more precise measurement.
+
+::: {.py-3}
 
 [**Social Vulnerability and Firearm Injury in King County, Washington (2024)**](https://doi.org/10.1177/00333549241301714)\
 [*Public Health Reports*]{.pub-journal}\
 Do areas with higher social vulnerability have higher rates of firearm injury? Using EMS data and Bayesian spatial modeling across King County, Washington, this study found that high-vulnerability areas had firearm injury rates three times higher than low-vulnerability areas.
 
+::: {.py-3}
+
 [**Neighborhood Air Pollution Disparities in Chicago (2022)**](https://doi.org/10.2105/AJPH.2022.307068)\
 [*American Journal of Public Health*]{.pub-journal}\
 Can low-cost sensor networks detect neighborhood-level disparities in air pollution that regulatory monitors miss? A dense sensor network deployed across Chicago found that racial and ethnic composition predicted fine particulate matter exposure at the neighborhood level, including during wildfire and July 4th episodes.
+
+::: {.py-3}
 
 [**Intimate Partner Violence and Depression in Rural Bangladesh (2019)**](https://doi.org/10.1016/j.ssmph.2019.100368)\
 [*SSM — Population Health*]{.pub-journal}\
