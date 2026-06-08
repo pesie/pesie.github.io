@@ -516,7 +516,7 @@ The quiz below is a simplified approximation of the four profiles, not a recreat
     <label style="display:block; font-size:13px;"><input type="radio" name="q4" value="3"> Strongly agree</label>
   </div>
 
-  <button onclick="scoreQuiz()" style="background:#008cba; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
+  <button onclick="scoreQuiz()" style="background:#7F77DD; color:white; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer;">See my profile</button>
 
   <div id="quiz-result" style="display:none; margin-top:1.25rem; padding:1rem; border-radius:6px; font-size:13px; line-height:1.6;"></div>
 </div>
