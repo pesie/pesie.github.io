@@ -12,7 +12,7 @@ I'm a quantitative researcher trained in social epidemiology. Across different t
 
 #### How I Work
 
-I start by understanding what decision the analysis is meant to inform. Before running models, I examine where the data came from and what assumptions are built into it. Some questions require causal methods. Others are better answered with segmentation, descriptive analysis, or a clear chart. Results rarely speak for themselves, so part of the work is translating findings into language that supports clear decisions while being honest about what the data can and cannot support.
+I start by understanding what decision the analysis is meant to inform. Before running models, I examine where the data came from and what assumptions are built into it. Some questions require causal methods. Others are better answered with segmentation, a descriptive analysis, or a clear chart. Results rarely speak for themselves, so part of the work is translating findings into language that supports decisions while being honest about what the data can and cannot support.
 
 ::: {.py-3}
 
@@ -25,8 +25,17 @@ I start by understanding what decision the analysis is meant to inform. Before r
 Using nationally representative survey data, this analysis identifies four ways people navigate health information and examines how those differences relate to trust and perceived care quality.
 
 [Latent Class Analysis · Behavioral Segmentation · Survey Research]{.text-muted .small}
-
 :::
+
+::: {.py-3}
+
+#### Notes
+:::
+::: {.featured-project}
+[We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
+A translation guide for what epidemiologists call the questions that show up across industries
+:::
+
 ::: {.py-3}
 
 #### Publications

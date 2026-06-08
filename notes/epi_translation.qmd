@@ -1,0 +1,133 @@
+---
+title: "We Solve the Same Problems. We Just Use Different Words."
+date: "2026-06-02"
+categories: [notes]
+format:
+  html:
+    toc: false
+---
+
+I've spent most of my career asking some version of the same question: why do outcomes differ across people, and can we trust the data telling us that they do?
+
+That question sits at the center of epidemiology. It also shows up in practical settings where the data exists but the answer is not obvious, or where an apparent pattern may not reflect what is actually happening.
+
+The terminology is different. The underlying problems often aren't.
+
+```{=html}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Practical question</th>
+      <th>Epidemiologic translation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Did the campaign work?</td>
+      <td>Did the exposure cause the outcome?</td>
+    </tr>
+    <tr>
+      <td>These two things move together. Does one cause the other?</td>
+      <td>Is the association confounded?</td>
+    </tr>
+    <tr>
+      <td>Why does this work better for some groups?</td>
+      <td>Is there effect modification?</td>
+    </tr>
+    <tr>
+      <td>Can we trust this metric?</td>
+      <td>Is this measure valid?</td>
+    </tr>
+    <tr>
+      <td>Are the people giving us feedback representative?</td>
+      <td>Is there selection bias?</td>
+    </tr>
+    <tr>
+      <td>Who is likely to churn, convert, or become high-cost?</td>
+      <td>Who is at risk?</td>
+    </tr>
+    <tr>
+      <td>What meaningful groups exist?</td>
+      <td>Are there latent subpopulations?</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### Did the campaign work?
+
+Before giving credit to an intervention, you have to rule out everything else that changed at the same time. Sales went up, but was that the campaign? Or was it seasonality or a competitor who exited the market?
+
+An epidemiologist would ask, what would have happened if the intervention had never occurred?
+
+`Difference-in-differences` · `Interrupted time series`
+
+::: {.py-2}
+
+### These two things move together. Does one cause the other?
+
+Association is often the start of the analysis, not the conclusion.
+
+Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more may also have higher incomes, better access to healthcare, and healthier diets.
+
+A third factor can make two things appear connected even when one is not driving the other.
+
+`Confounding assessment` · `Causal inference` · `Sensitivity analysis`
+
+::: {.py-2}
+
+### Why does this work better for some groups than others?
+
+An average effect can hide everything interesting. The same product, campaign, or policy can work differently depending on who is receiving it, and sometimes that variation is the finding.
+
+Understanding heterogeneity is often more useful than understanding the average.
+
+`Interaction terms` · `Stratified analyses`
+
+::: {.py-2}
+
+### Can we trust this metric?
+
+Before acting on a measure, it's worth asking how it was constructed, what it captures, and what it might be excluding.
+
+This applies as much to customer satisfaction scores and engagement metrics as it does to health surveys and surveillance systems.
+
+`Validation studies` · `Measurement error assessment`
+
+::: {.py-2}
+
+### Are the people giving us feedback representative?
+
+The people in your data are not necessarily representative of the people you care about.
+
+Survey respondents differ from nonrespondents. Early adopters differ from later users. People who seek out a service differ from those who never enter the system.
+
+A big source of bias is often who's missing.
+
+`Selection bias` · `Weighting` · `Missing data methods`
+
+::: {.py-2}
+
+### Who is most likely to churn, convert, or become high-cost?
+
+Many decisions depend on identifying who is most likely to experience an event before it happens and understanding what predicts that transition.
+
+The outcome itself might be different, but the problem remains the same.
+
+`Risk prediction` · `Survival analysis` · `Longitudinal modeling`
+
+::: {.py-2}
+
+### What meaningful groups exist?
+
+People don't behave as one homogeneous group, and they don't always sort neatly into the categories we'd expect.
+
+Sometimes the most useful insight comes from identifying groups of people who share patterns of behavior, attitudes, or needs, especially when those groups don't map onto obvious demographic categories.
+
+`Latent class analysis` · `Clustering`
+
+::: {.py-2}
+
+Epidemiology is formally defined as the study of disease distribution and determinants in populations. In practice, it is also a way of thinking about evidence: why outcomes differ, whether a pattern is real, and what can reasonably be concluded from imperfect data.
+
+Those tools travel.
