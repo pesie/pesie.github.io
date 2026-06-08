@@ -476,7 +476,7 @@ For organizations communicating health information, reducing information burden 
 
 
 
-::: {.callout-note collapse="true" appearance=simple}
+::: {.callout-note .callout-purple collapse="true" appearance="simple"}
 ### Try it: Where would you fall? Expand to take quiz.
 The quiz below is a simplified approximation of the four profiles, not a recreation of the latent class model. It uses the same four concepts, but scores them as two dimensions: inconsistency and overload
 
