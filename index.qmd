@@ -8,7 +8,7 @@ I'm a quantitative researcher trained in social epidemiology. Across different t
 
 [More about me →](about.qmd)
 
-:::::::: py-3
+::::::: py-3
 #### How I Work
 
 I start by understanding what decision the analysis is meant to inform. Before running models, I examine where the data came from and what assumptions are built into it. Some questions require causal methods. Others are better answered with segmentation, a descriptive analysis, or a clear chart. Results rarely speak for themselves, so part of the work is translating findings into language that supports decisions while being honest about what the data can and cannot support.
@@ -28,11 +28,16 @@ Using nationally representative survey data, this analysis identifies four ways 
 ::: py-3
 #### Notes
 :::
-
-::: featured-project
+::: note-item
 [We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
 
 Epidemiologic translations for common analytical questions.
+:::
+
+::: note-item
+[Perception Is Not a Noisy Version of Reality](notes/perception-not-noise.qmd)
+
+The choice between perceived and objective measures is a theoretical claim about your causal model.
 :::
 
 ::: py-3
@@ -44,4 +49,4 @@ Recent work has appeared in *American Journal of Public Health*, *Journal of Stu
 
 [View all publications →](publications.qmd)
 :::
-::::::::
+:::::::

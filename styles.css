@@ -15,8 +15,15 @@
 }
 
 .featured-project {
-  border-left: 4px solid #008cba;
-  padding-left: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  transition: background-color 0.15s ease;
+}
+
+.featured-project:hover {
+  background-color: #f8f8f8;
 }
 
 main.content {
@@ -45,4 +52,39 @@ main.content {
 
 body {
   font-size: 16px;
+}
+
+.note-item {
+  padding: 1rem 1.25rem;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  transition: background-color 0.15s ease;
+}
+
+.note-item:hover {
+  background-color: #f8f8f8;
+}
+
+.note-item a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.note-item a:hover {
+  text-decoration: underline;
+}
+
+.note-item p {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

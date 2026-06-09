@@ -1,0 +1,90 @@
+---
+title: "Perception Is Not a Noisy Version of Reality"
+date: "2026-06-09"
+categories: [notes, measurement, methods]
+description: "The gap between perceived and objective data is often a theoretical problem, not a quality one."
+format:
+  html:
+    toc: false
+---
+
+There is a version of this problem that shows up in applied research, usually framed as a measurement quality issue. You have two measures of the same construct, one objective and one subjective. They don't agree. Which one do you trust?
+
+I've become less convinced that's the right question.
+
+The longer I work with behavioral data, the more I notice that perceived and objective measures often aren't measuring the same thing at all. The choice between them is a claim about what you think is driving behavior, and from what I've seen, many researchers make that claim without knowing it.
+
+::: {.py-2}
+
+### The assumption hidden inside measurement
+
+In conversations about perceived versus objective measures, I’ve noticed how quickly the discussion turns to accuracy. Is one more biased? Is one easier to defend? Those questions matter, but they can also make it sound as if both measures are aiming at the same target.
+
+Sometimes they are. A self-reported diagnosis and a medical record diagnosis may both be attempts to capture the presence of the same condition.
+
+But some constructs don't work that way. A person's perception of safety is related to local conditions, but it's also shaped by their own experiences, what they've seen happen to people they know, and what they believe could happen to them. There's no external record that tells you which of those inputs is wrong. Perception isn't inherently a flawed estimate of the crime rate. It may be capturing something the crime rate can't.
+
+:::
+
+::: {.py-2}
+
+### Consider the discordant cases
+
+Take two people living in the same neighborhood. The available objective indicators are the same — the same recorded crime rate, the same sidewalks, the same lighting, the same local resources. But subjective measures differ. One feels safe walking alone at night, the other does not.
+
+The person who feels unsafe may avoid walking outside, limit contact with neighbors, or underuse local resources, regardless of what crime statistics say. In that case, perceived safety is not a weaker version of the objective measure. It may be closer to the mechanism you are actually trying to understand.
+
+This is why the discordant cases are worth paying attention to. When someone perceives high risk despite low objective risk, or strong social support despite weak objective support, it forces a different question. Not which measure is correct, but which measure is most relevant to the mechanism you care about.
+:::
+
+::: {.py-2}
+
+### Measurement choices are causal claims
+
+Every measure implies a theory. If you believe behavior changes mainly because objective conditions change, it makes sense to measure those conditions directly. If you believe behavior changes because people perceive those conditions differently, then perception belongs in the model. An intervention that changes objective conditions without touching perception may not move behavior at all, and if you never measured perception, you won't know why.
+
+```{=html}
+<div style="padding: 1rem 0 1rem;">
+  <div style="font-size: 11px; color: var(--color-text-tertiary, #888); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Path A — direct</div>
+  <div style="display: flex; align-items: center; margin-bottom: .75rem;">
+    <div style="display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 0 18px; height: 44px; font-size: 13px; font-weight: 500; white-space: nowrap; border: 0.5px solid #5F5E5A; background: #F1EFE8; color: #2C2C2A;">Objective conditions</div>
+    <div style="display: flex; align-items: center; padding: 0 8px; color: #888; flex-shrink: 0;">
+      <svg width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="30" y2="8" stroke="currentColor" stroke-width="1.5"/><path d="M25 4L31 8L25 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 0 18px; height: 44px; font-size: 13px; font-weight: 500; white-space: nowrap; border: 0.5px solid #0F6E56; background: #E1F5EE; color: #085041;">Behavior</div>
+  </div>
+  <hr style="border: none; border-top: 0.5px solid #ccc; margin: 0 0 .75rem;">
+  <div style="font-size: 11px; color: var(--color-text-tertiary, #888); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Path B — mediated</div>
+  <div style="display: flex; align-items: center; margin-bottom: 1.25rem;">
+    <div style="display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 0 18px; height: 44px; font-size: 13px; font-weight: 500; white-space: nowrap; border: 0.5px solid #5F5E5A; background: #F1EFE8; color: #2C2C2A;">Objective conditions</div>
+    <div style="display: flex; align-items: center; padding: 0 8px; color: #888; flex-shrink: 0;">
+      <svg width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="30" y2="8" stroke="currentColor" stroke-width="1.5"/><path d="M25 4L31 8L25 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 0 18px; height: 44px; font-size: 13px; font-weight: 500; white-space: nowrap; border: 0.5px solid #534AB7; background: #EEEDFE; color: #3C3489;">Perception</div>
+    <div style="display: flex; align-items: center; padding: 0 8px; color: #888; flex-shrink: 0;">
+      <svg width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="30" y2="8" stroke="currentColor" stroke-width="1.5"/><path d="M25 4L31 8L25 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 0 18px; height: 44px; font-size: 13px; font-weight: 500; white-space: nowrap; border: 0.5px solid #0F6E56; background: #E1F5EE; color: #085041;">Behavior</div>
+  </div>
+  <div style="font-size: 13px; color: #555; line-height: 1.6; padding: 12px 16px; border-left: 2px solid #7F77DD; background: #EEEDFE; border-radius: 0 6px 6px 0;">
+    If Path B is closer to the mechanism and you only measure Path A, you may misread your results and not know why.
+  </div>
+</div>
+```
+:::
+
+::: {.py-2}
+I'm not saying objective measures are suspect or that perception always wins. Sometimes objective conditions shape perception in ways that make the distinction less clean than it looks on paper. But the choice should follow from an explicit theory of the mechanism, not from a default preference for data that feels more concrete. Objectivity is not the same as validity. A measure is valid when it captures the construct that's causally relevant to the outcome you're studying. Sometimes that construct is a perception.
+:::
+
+::: {.py-2}
+
+### Before choosing a measure
+
+Rather than asking which measure is more accurate, it may be worth asking: what has to change for the behavior I care about to change? 
+
+For some questions, the answer points toward objective conditions. For others, it points toward how people are interpreting those conditions. If you're not sure which path is operating, that's worth figuring out.
+
+The measure you choose does more than describe the world. It reveals what part of the world you think matters.
+
+:::
