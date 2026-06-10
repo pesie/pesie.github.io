@@ -37,7 +37,7 @@ Here are a few examples.
   <tbody>
     <tr>
       <td>Did the campaign work?</td>
-      <td>Did the exposure cause the outcome?</td>
+      <td>Did the change happen because of the intervention?</td>
     </tr>
     <tr>
       <td>These two things move together. Does one cause the other?</td>
@@ -78,7 +78,7 @@ Here are a few examples.
 
 Before giving credit to an intervention, you have to rule out everything else that changed at the same time. Sales went up, but was that the campaign? Or was it seasonality, or a competitor who exited the market?
 
-An epidemiologist would ask, what would have happened if the intervention never occurred? Depending on the data structure, that might mean a `difference-in-differences` design or an `interrupted time series`.
+An epidemiologist would ask, what would have happened if nothing had changed? Depending on the data structure, that might mean a `difference-in-differences` design or an `interrupted time series`.
 
 :::
 
@@ -88,7 +88,7 @@ An epidemiologist would ask, what would have happened if the intervention never 
 
 Association is often the start of the analysis, not the conclusion.
 
-Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more may also have higher incomes, better access to healthcare, and healthier diets.
+Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more tend to have better cardiovascular health, but they also tend to have higher incomes, better access to healthcare, and healthier diets.
 
 A third factor can make two things appear connected even when one is not driving the other. `Regression adjustment` handles the cases where you can measure the confounders. `Propensity score methods` reconstruct comparability by balancing groups on observed characteristics before estimating the effect. When you can randomize, `RCTs` sidestep the problem entirely.
 
@@ -100,7 +100,7 @@ A third factor can make two things appear connected even when one is not driving
 
 An average effect can hide everything interesting. The same product, campaign, or policy can work differently depending on who is receiving it, and sometimes that variation is the finding.
 
-Knowing who it works for is often more useful than knowing whether it works on average. That's what `interaction terms` and `stratified analyses` are for.
+Knowing who it works for is often more useful than knowing whether it works on average. That's what `effect modification`, `interaction terms` and `stratified analyses` are for.
 
 :::
 
@@ -118,7 +118,7 @@ Before acting on a measure, it's worth asking how it was constructed, what it ca
 
 ### Are the people giving us feedback representative?
 
-The people in your data are not necessarily representative of the people you care about.
+Selection bias happens whern the people in your data are not necessarily representative of the people you care about.
 
 People who respond to a survey differ from people who don't. Early adopters differ from later users. People who seek out a service differ from those who never enter the system. A big source of bias is often who we're missing, and correcting for it usually means `weighting` or explicitly modeling who got left out.
 
@@ -138,9 +138,9 @@ The outcome is different depending on the industry, but the problems and how we 
 
 ### How much does context matter?
 
-Individual outcomes don't happen in a vacuum. Patients sit within provider networks. Members sit within health plans. Employees sit within teams.
+People don't exist in isolation. Patients sit within provider networks. Members sit within health plans. Employees sit within teams.
 
-When data has that kind of nested structure, standard models treat every observation as independent, which understates how much the context someone is in shapes their outcome. `Multilevel models` separate out how much of the variation is attributable to the individual versus the unit they belong to. That's useful both for accurate estimation and for knowing where to intervene.
+Those contexts can shape outcomes. `Multilevel models` help separate what is happening at the individual level from what is happening at the group, organization, or place level. That matters because the right intervention may not be aimed at the person, it may be aimed at the system around them instead. 
 
 :::
 

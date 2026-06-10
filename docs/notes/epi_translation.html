@@ -186,7 +186,7 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 <tbody>
 <tr class="odd">
 <td>Did the campaign work?</td>
-<td>Did the exposure cause the outcome?</td>
+<td>Did the change happen because of the intervention?</td>
 </tr>
 <tr class="even">
 <td>These two things move together. Does one cause the other?</td>
@@ -222,18 +222,18 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 <section id="did-the-campaign-work" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="did-the-campaign-work">Did the campaign work?</h3>
 <p>Before giving credit to an intervention, you have to rule out everything else that changed at the same time. Sales went up, but was that the campaign? Or was it seasonality, or a competitor who exited the market?</p>
-<p>An epidemiologist would ask, what would have happened if the intervention never occurred? Depending on the data structure, that might mean a <code>difference-in-differences</code> design or an <code>interrupted time series</code>.</p>
+<p>An epidemiologist would ask, what would have happened if nothing had changed? Depending on the data structure, that might mean a <code>difference-in-differences</code> design or an <code>interrupted time series</code>.</p>
 </section>
 <section id="these-two-things-move-together.-does-one-cause-the-other" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="these-two-things-move-together.-does-one-cause-the-other">These two things move together. Does one cause the other?</h3>
 <p>Association is often the start of the analysis, not the conclusion.</p>
-<p>Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more may also have higher incomes, better access to healthcare, and healthier diets.</p>
+<p>Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more tend to have better cardiovascular health, but they also tend to have higher incomes, better access to healthcare, and healthier diets.</p>
 <p>A third factor can make two things appear connected even when one is not driving the other. <code>Regression adjustment</code> handles the cases where you can measure the confounders. <code>Propensity score methods</code> reconstruct comparability by balancing groups on observed characteristics before estimating the effect. When you can randomize, <code>RCTs</code> sidestep the problem entirely.</p>
 </section>
 <section id="why-does-this-work-better-for-some-groups-than-others" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="why-does-this-work-better-for-some-groups-than-others">Why does this work better for some groups than others?</h3>
 <p>An average effect can hide everything interesting. The same product, campaign, or policy can work differently depending on who is receiving it, and sometimes that variation is the finding.</p>
-<p>Knowing who it works for is often more useful than knowing whether it works on average. That’s what <code>interaction terms</code> and <code>stratified analyses</code> are for.</p>
+<p>Knowing who it works for is often more useful than knowing whether it works on average. That’s what <code>effect modification</code>, <code>interaction terms</code> and <code>stratified analyses</code> are for.</p>
 </section>
 <section id="can-we-trust-this-metric" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="can-we-trust-this-metric">Can we trust this metric?</h3>
@@ -242,7 +242,7 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 </section>
 <section id="are-the-people-giving-us-feedback-representative" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="are-the-people-giving-us-feedback-representative">Are the people giving us feedback representative?</h3>
-<p>The people in your data are not necessarily representative of the people you care about.</p>
+<p>Selection bias happens whern the people in your data are not necessarily representative of the people you care about.</p>
 <p>People who respond to a survey differ from people who don’t. Early adopters differ from later users. People who seek out a service differ from those who never enter the system. A big source of bias is often who we’re missing, and correcting for it usually means <code>weighting</code> or explicitly modeling who got left out.</p>
 </section>
 <section id="who-is-most-likely-to-churn-convert-or-become-high-cost" class="level3 py-2">
@@ -252,8 +252,8 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 </section>
 <section id="how-much-does-context-matter" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="how-much-does-context-matter">How much does context matter?</h3>
-<p>Individual outcomes don’t happen in a vacuum. Patients sit within provider networks. Members sit within health plans. Employees sit within teams.</p>
-<p>When data has that kind of nested structure, standard models treat every observation as independent, which understates how much the context someone is in shapes their outcome. <code>Multilevel models</code> separate out how much of the variation is attributable to the individual versus the unit they belong to. That’s useful both for accurate estimation and for knowing where to intervene.</p>
+<p>People don’t exist in isolation. Patients sit within provider networks. Members sit within health plans. Employees sit within teams.</p>
+<p>Those contexts can shape outcomes. <code>Multilevel models</code> help separate what is happening at the individual level from what is happening at the group, organization, or place level. That matters because the right intervention may not be aimed at the person, it may be aimed at the system around them instead.</p>
 </section>
 <section id="what-meaningful-groups-exist" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="what-meaningful-groups-exist">What meaningful groups exist?</h3>
