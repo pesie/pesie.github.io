@@ -1,5 +1,6 @@
 ---
 title: "We Solve the Same Problems. We Just Use Different Words."
+subtitle: "Epidemiologic thinking outside epidemiology."
 date: "2026-06-02"
 categories: [notes, methods]
 format:

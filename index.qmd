@@ -2,19 +2,19 @@
 title: "&nbsp;"
 ---
 
-#### I use population and behavioral data to make sense of why outcomes differ across people and places.
+### I use population and behavioral data to make sense of why outcomes differ across people and places.
 
 I'm a quantitative researcher trained in social epidemiology. Across different topics and settings, I've stayed interested in the same challenge of figuring out what imperfect data can tell us about the world.
 
 [More about me →](about.qmd)
 
-::::::: py-3
-#### How I Work
+:::: py-3
+### How I Work
 
 I start by understanding what decision the analysis is meant to inform. Before running models, I examine where the data came from and what assumptions are built into it. Some questions require causal methods. Others are better answered with segmentation, a descriptive analysis, or a clear chart. Results rarely speak for themselves, so part of the work is translating findings into language that supports decisions while being honest about what the data can and cannot support.
 
 ::: py-3
-#### Selected Work
+### Selected Work
 :::
 
 ::: featured-project
@@ -26,7 +26,7 @@ Using nationally representative survey data, this analysis identifies four ways 
 :::
 
 ::: py-3
-#### Notes
+### Notes
 :::
 ::: note-item
 [We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
@@ -41,7 +41,7 @@ The choice between perceived and objective measures is a theoretical claim about
 :::
 
 ::: py-3
-#### Publications
+### Publications
 
 18 peer-reviewed publications, including 9 as first author.
 
@@ -49,4 +49,4 @@ Recent work has appeared in *American Journal of Public Health*, *Journal of Stu
 
 [View all publications →](publications.qmd)
 :::
-:::::::
+

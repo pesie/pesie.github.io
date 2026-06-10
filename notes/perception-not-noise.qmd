@@ -2,7 +2,7 @@
 title: "Perception Is Not a Noisy Version of Reality"
 date: "2026-06-09"
 categories: [notes, measurement, methods]
-description: "The gap between perceived and objective data is often a theoretical problem, not a quality one."
+subtitle: "The gap between perceived and objective data is often a theoretical problem, not a quality one."
 format:
   html:
     toc: false
