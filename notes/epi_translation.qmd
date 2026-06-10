@@ -19,29 +19,18 @@ Here are a few examples.
 
 ```{=html}
 <style>
-.translation-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.translation-table thead th {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid #dee2e6;
-  padding: 0.5rem 0.75rem;
-}
-.translation-table tbody td {
-  padding: 0.6rem 0.75rem;
-  border: none;
-  vertical-align: top;
-}
+.tt { border-collapse: collapse; width: 100%; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.tt thead tr { background: #f4f4f2; border-bottom: 1px solid #ddd; }
+.tt thead td { padding: 0.55rem 0.75rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #888; }
+.tt tbody td { padding: 0.75rem 0.75rem; vertical-align: top; font-size: 14px; font-weight: 400; line-height: 1.5; }
+.tt td:first-child { width: 48%; }
+.tt td:last-child { width: 52%; }
 </style>
-
-<table class="translation-table">
+<table class="tt">
   <thead>
     <tr>
-      <th>Practical question</th>
-      <th>Epidemiologic translation</th>
+      <td>Practical question</td>
+      <td>Epidemiologic translation</td>
     </tr>
   </thead>
   <tbody>
@@ -70,6 +59,10 @@ Here are a few examples.
       <td>Who is at risk?</td>
     </tr>
     <tr>
+      <td>How much does context matter?</td>
+      <td>Does the unit someone belongs to shape their outcome?</td>
+    </tr>
+    <tr>
       <td>What meaningful groups exist?</td>
       <td>Are there latent subpopulations?</td>
     </tr>
@@ -84,9 +77,8 @@ Here are a few examples.
 
 Before giving credit to an intervention, you have to rule out everything else that changed at the same time. Sales went up, but was that the campaign? Or was it seasonality, or a competitor who exited the market?
 
-An epidemiologist would ask, what would have happened if the intervention never occurred?
+An epidemiologist would ask, what would have happened if the intervention never occurred? Depending on the data structure, that might mean a `difference-in-differences` design or an `interrupted time series`.
 
-`Difference-in-differences` · `Interrupted time series`
 :::
 
 ::: {.py-2}
@@ -97,9 +89,7 @@ Association is often the start of the analysis, not the conclusion.
 
 Customers who use a feature may spend more, but they may also have been more engaged before they ever used it. People who exercise more may also have higher incomes, better access to healthcare, and healthier diets.
 
-A third factor can make two things appear connected even when one is not driving the other.
-
-`Confounding assessment` · `Causal inference` · `Sensitivity analysis`
+A third factor can make two things appear connected even when one is not driving the other. `Regression adjustment` handles the cases where you can measure the confounders. `Propensity score methods` reconstruct comparability by balancing groups on observed characteristics before estimating the effect. When you can randomize, `RCTs` sidestep the problem entirely.
 
 :::
 
@@ -109,9 +99,8 @@ A third factor can make two things appear connected even when one is not driving
 
 An average effect can hide everything interesting. The same product, campaign, or policy can work differently depending on who is receiving it, and sometimes that variation is the finding.
 
-Knowing who it works for is often more useful than knowing whether it works on average.
+Knowing who it works for is often more useful than knowing whether it works on average. That's what `interaction terms` and `stratified analyses` are for.
 
-`Interaction terms` · `Stratified analyses`
 :::
 
 ::: {.py-2}
@@ -120,9 +109,8 @@ Knowing who it works for is often more useful than knowing whether it works on a
 
 Before acting on a measure, it's worth asking how it was constructed, what it captures, and what it might be excluding.
 
-The same question applies whether you're looking at a customer satisfaction score or a disease surveillance system.
+`Construct validity` asks whether the measure actually captures the underlying concept it's supposed to represent. `Reliability` asks whether it does so consistently, across time, across raters, contexts. Both are questions you can ask of a customer satisfaction score or a disease surveillance system. The answers are not always reassuring.
 
-`Validation studies` · `Measurement error assessment`
 :::
 
 ::: {.py-2}
@@ -131,11 +119,8 @@ The same question applies whether you're looking at a customer satisfaction scor
 
 The people in your data are not necessarily representative of the people you care about.
 
-People who respond to a survey differ from people who don't. Early adopters differ from later users. People who seek out a service differ from those who never enter the system.
+People who respond to a survey differ from people who don't. Early adopters differ from later users. People who seek out a service differ from those who never enter the system. A big source of bias is often who we're missing, and correcting for it usually means `weighting` or explicitly modeling who got left out.
 
-A big source of bias is often who we're missing.
-
-`Selection bias` · `Weighting` · `Missing data methods`
 :::
 
 ::: {.py-2}
@@ -144,9 +129,18 @@ A big source of bias is often who we're missing.
 
 Many decisions depend on identifying who is most likely to experience an event before it happens and understanding what predicts that transition.
 
-The outcome is different depending on the industry, but the problems and how we solve them are the same.
+The outcome is different depending on the industry, but the problems and how we solve them are the same. `Regression models` can tell you who is at elevated risk at a point in time. When *timing* of the outcome matters, that means `survival analysis`. When the exposure or outcome is measured repeatedly, `longitudinal modeling` accounts for the fact that observations on the same person are not independent.
 
-`Risk prediction` · `Survival analysis` · `Longitudinal modeling`
+:::
+
+::: {.py-2}
+
+### How much does context matter?
+
+Individual outcomes don't happen in a vacuum. Patients sit within provider networks. Members sit within health plans. Employees sit within teams.
+
+When data has that kind of nested structure, standard models treat every observation as independent, which understates how much the context someone is in shapes their outcome. `Multilevel models` separate out how much of the variation is attributable to the individual versus the unit they belong to. That's useful both for accurate estimation and for knowing where to intervene.
+
 :::
 
 ::: {.py-2}
@@ -155,14 +149,13 @@ The outcome is different depending on the industry, but the problems and how we 
 
 People don't behave as one homogeneous group, and they don't always sort neatly into the categories we'd expect.
 
-Sometimes the most useful insight comes from identifying groups of people who share patterns of behavior, attitudes, or needs, especially when those groups don't map onto obvious demographic categories.
+Sometimes the most useful insight comes from identifying groups of people who share patterns of behavior, attitudes, or needs, especially when those groups don't map onto obvious demographic categories. `Latent class analysis` and `clustering` methods are built for exactly that.
+
 :::
-
-`Latent class analysis` · `Clustering`
-
+---
 ::: {.py-3}
 
-Epidemiology is technically the study of disease distribution and determinants in populations. But in practice, it's a set of tools for figuring out why outcomes differ and whether what you're seeing is real. 
+Epidemiology is technically the study of disease distribution and determinants in populations. But in practice, it's a set of tools for figuring out why outcomes differ and whether what you're seeing is real.
 
-Those tools travel.
+The vocabulary is different. The underlying logic isn't.
 :::
