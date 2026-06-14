@@ -1,17 +1,18 @@
 ---
 title: "&nbsp;"
 ---
-
-### I use population and behavioral data to make sense of why outcomes differ across people and places.
+### I use population data to make sense of why outcomes differ across people and places.
 
 I'm a quantitative researcher trained in social epidemiology. Across different topics and settings, I've stayed interested in the same challenge of figuring out what imperfect data can tell us about the world.
 
 [More about me →](about.qmd)
 
-:::: py-3
+::: py-3
 ### How I Work
 
-I start by understanding what decision the analysis is meant to inform. Before running models, I examine where the data came from and what assumptions are built into it. Some questions require causal methods. Others are better answered with segmentation, a descriptive analysis, or a clear chart. Results rarely speak for themselves, so part of the work is translating findings into language that supports decisions while being honest about what the data can and cannot support.
+The methods follow from the question. Some problems need causal inference. Others need prediction, segmentation, or descriptive trends. Before modeling, I look at where the data came from, what it can support, and what assumptions I'm making. The analysis isn't done until the finding is translated into something that supports a decision.
+
+:::
 
 ::: py-3
 ### Selected Work
@@ -29,15 +30,21 @@ Using nationally representative survey data, this analysis identifies four ways 
 ### Notes
 :::
 ::: note-item
-[We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
+[The Average Describes Nobody Particularly Well](notes/the-average-describes-nobody.qmd)
 
-Epidemiologic translations for common analytical questions.
+Averages can be accurate and still point you toward the wrong explanation.
 :::
 
 ::: note-item
 [Perception Is Not a Noisy Version of Reality](notes/perception-not-noise.qmd)
 
 The choice between perceived and objective measures is a theoretical claim about your causal model.
+:::
+
+::: note-item
+[We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
+
+Epidemiologic translations for common analytical questions.
 :::
 
 ::: py-3
