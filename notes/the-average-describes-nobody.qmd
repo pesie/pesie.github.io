@@ -1,6 +1,6 @@
 ---
 title: "The Average Describes Nobody Particularly Well"
-description: "Averages can be accurate and still point us toward the wrong explanation."
+subtitle: "Averages can be accurate and still point us toward the wrong explanation."
 date: "2026-06-15"
 categories: [notes, measurement, methods]
 format:
@@ -14,8 +14,7 @@ What stuck with me was what the paradox revealed about aggregation. A summary ca
 
 Aggregation is a necessary part of any analysis. At some point, you have to summarize. The question is whether the level of summary matches the level at which something meaningful is happening.
 
-::: {.py-2}
-
+::: py-2
 ### Three ways it goes wrong
 
 ```{=html}
@@ -156,25 +155,20 @@ Take the first panel. Two groups are increasing, but one is increasing much fast
 In the second panel, one group is stable while the other is rising sharply. The average moves upward, but only modestly. Looking only at the aggregate would make the change appear smaller than it actually is for the group driving it.
 
 The third panel is the most consequential. One group is increasing while the other is decreasing. The average is essentially flat. From the aggregate alone, it looks like nothing is happening. But the reality is that the population is moving in two directions at once.
-
 :::
 
-::: {.py-2}
-
+::: py-2
 ### A case from my own work
 
-I encountered this directly in a [study on adolescent cannabis use](https://pmc.ncbi.nlm.nih.gov/articles/PMC12495892/) I published earlier this year. National prevalence among adolescents aged 12–17 appeared relatively stable over time. Had I stopped there, the conclusion would have been straightforward: not much had changed.
+I encountered this directly in a [study on adolescent cannabis use](https://pmc.ncbi.nlm.nih.gov/articles/PMC12495892/) I published earlier this year. National prevalence among adolescents aged 12-17 appeared relatively stable over time. Had I stopped there, the conclusion would have been pretty straightforward — not much had changed.
 
-When I broke it out by sex, the flat trend turned out to be two trends moving in opposite directions. Cannabis use among males had declined while use among females had increased, eventually surpassing males by 2022. The overall trend was flat because two opposing trends were offsetting one another.
+When I broke it out by sex, the flat trend hid two trends moving in opposite directions. Cannabis use among males had declined while use among females had increased, eventually surpassing males by 2022. The overall trend was flat because two opposing trends were offsetting one another.
 
 The aggregate was accurate, but it would have led to the wrong conclusion. A stable overall prevalence suggests no need to rethink existing approaches. Diverging trends between groups suggest the opposite.
-
 :::
 
-::: {.py-2}
-
+::: py-2
 ### What this means
 
 A category is a theory that the people inside it are more similar to each other than to the people outside it. When that theory fails, the average becomes misleading. Many of the most interesting findings in research come from discovering that the average describes nobody particularly well.
-
 :::
