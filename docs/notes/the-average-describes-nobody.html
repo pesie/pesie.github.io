@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-06-15">
+<meta name="dcterms.date" content="2026-06-14">
 
 <title>The Average Describes Nobody Particularly Well – Precious Esie, PhD</title>
 <style>
@@ -151,7 +151,7 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 15, 2026</p>
+      <p class="date">June 14, 2026</p>
     </div>
   </div>
   
@@ -163,9 +163,7 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 </header>
 
 
-<p>One of the first statistical ideas that genuinely fascinated me was <a href="https://en.wikipedia.org/wiki/Simpson's_paradox" target="_blank">Simpson’s paradox</a>. A pattern that appears within multiple groups can disappear or even reverse once those groups are combined.</p>
-<p>What stuck with me was what the paradox revealed about aggregation. A summary can be mathematically correct and still point you toward the wrong explanation.</p>
-<p>Aggregation is a necessary part of any analysis. At some point, you have to summarize. The question is whether the level of summary matches the level at which something meaningful is happening.</p>
+<p>At some point in any analysis, you have to summarize. The question is whether the level of summary matches the level at which something meaningful is happening. Getting that wrong can lead you to the wrong explanation even when the math is right.</p>
 <section id="three-ways-it-goes-wrong" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="three-ways-it-goes-wrong">Three ways it goes wrong</h3>
 <div class="figure-wrap">
@@ -224,21 +222,21 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
 
   const panels = [
     {
-      title: 'Magnitude',
+      title: "Who's driving it",
       subtitle: 'Average rises, but one group is rising faster',
       g1: [10.0, 11.5, 13.5, 15.5, 17.5, 19.0],
       g2: [7.0,  7.5,  8.0,  8.5,  9.0,  9.5],
       ymin: 4, ymax: 22
     },
     {
-      title: 'Direction',
+      title: "Where it's concentrated",
       subtitle: 'Average rises, but only one group is moving',
       g1: [10.0, 11.5, 13.0, 15.0, 17.0, 19.0],
       g2: [11.0, 11.0, 11.0, 11.0, 11.0, 11.0],
       ymin: 8, ymax: 22
     },
     {
-      title: 'Opposing Trends',
+      title: "Opposing trends",
       subtitle: 'Average is flat, but the groups are moving in different directions',
       g1: [6.0, 6.5, 7.0, 7.5, 8.5, 9.0],
       g2: [9.0, 8.5, 8.0, 7.5, 6.5, 6.0],
@@ -298,19 +296,17 @@ gtag('config', 'G-B5EX75MDD2', { 'anonymize_ip': true});
   });
 })();
 </script>
-<p>Take the first panel. Two groups are increasing, but one is increasing much faster than the other. The average rises too, but it tells you little about where the change is concentrated.</p>
-<p>In the second panel, one group is stable while the other is rising sharply. The average moves upward, but only modestly. Looking only at the aggregate would make the change appear smaller than it actually is for the group driving it.</p>
-<p>The third panel is the most consequential. One group is increasing while the other is decreasing. The average is essentially flat. From the aggregate alone, it looks like nothing is happening. But the reality is that the population is moving in two directions at once.</p>
+<p>These examples differ in their details, but they share the same underlying problem. The aggregate describes the population as a whole, while the process generating the pattern operates within subgroups. When those subgroup patterns differ, the average can become a poor guide to explanation. It can tell you that change is happening without revealing where it is concentrated, how large it is, or whether different groups are moving in opposite directions.</p>
 </section>
 <section id="a-case-from-my-own-work" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="a-case-from-my-own-work">A case from my own work</h3>
-<p>I encountered this directly in a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12495892/" target="_blank">study on adolescent cannabis use</a> I published earlier this year. National prevalence among adolescents aged 12-17 appeared relatively stable over time. Had I stopped there, the conclusion would have been pretty straightforward — not much had changed.</p>
+<p>I came across the opposing trends pattern directly in a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12495892/" target="_blank">study on cannabis use trends</a> I published earlier this year. National prevalence among adolescents aged 12-17 appeared relatively stable over time. Had I stopped there, the conclusion would have been pretty straightforward — not much had changed.</p>
 <p>When I broke it out by sex, the flat trend hid two trends moving in opposite directions. Cannabis use among males had declined while use among females had increased, eventually surpassing males by 2022. The overall trend was flat because two opposing trends were offsetting one another.</p>
 <p>The aggregate was accurate, but it would have led to the wrong conclusion. A stable overall prevalence suggests no need to rethink existing approaches. Diverging trends between groups suggest the opposite.</p>
 </section>
 <section id="what-this-means" class="level3 py-2">
 <h3 class="anchored" data-anchor-id="what-this-means">What this means</h3>
-<p>A category is a theory that the people inside it are more similar to each other than to the people outside it. When that theory fails, the average becomes misleading. Many of the most interesting findings in research come from discovering that the average describes nobody particularly well.</p>
+<p>A category is a theory that the people inside it are more similar to each other than to the people outside it. The most interesting findings in research often come from discovering that the theory doesn’t hold, that the average describes nobody particularly well.</p>
 </section>
 
 
