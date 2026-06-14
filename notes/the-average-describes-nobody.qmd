@@ -160,7 +160,7 @@ The third panel is the most consequential. One group is increasing while the oth
 ::: py-2
 ### A case from my own work
 
-I encountered this directly in a [study on adolescent cannabis use](https://pmc.ncbi.nlm.nih.gov/articles/PMC12495892/) I published earlier this year. National prevalence among adolescents aged 12-17 appeared relatively stable over time. Had I stopped there, the conclusion would have been pretty straightforward — not much had changed.
+I encountered this directly in a [study on adolescent cannabis use](https://pmc.ncbi.nlm.nih.gov/articles/PMC12495892/){target="_blank"} I published earlier this year. National prevalence among adolescents aged 12-17 appeared relatively stable over time. Had I stopped there, the conclusion would have been pretty straightforward — not much had changed.
 
 When I broke it out by sex, the flat trend hid two trends moving in opposite directions. Cannabis use among males had declined while use among females had increased, eventually surpassing males by 2022. The overall trend was flat because two opposing trends were offsetting one another.
 
