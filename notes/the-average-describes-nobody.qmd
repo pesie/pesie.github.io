@@ -8,7 +8,7 @@ format:
     toc: false
 ---
 
-One of the first statistical ideas that genuinely fascinated me was [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson's_paradox). A pattern that appears within multiple groups can disappear or even reverse once those groups are combined.
+One of the first statistical ideas that genuinely fascinated me was [Simpson's paradox](https://en.wikipedia.org/wiki/Simpson's_paradox){target="_blank"}. A pattern that appears within multiple groups can disappear or even reverse once those groups are combined.
 
 What stuck with me was what the paradox revealed about aggregation. A summary can be mathematically correct and still point you toward the wrong explanation.
 
