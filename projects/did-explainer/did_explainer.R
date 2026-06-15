@@ -107,7 +107,7 @@ es_df <- as.data.frame(coeftable(es_model)) %>%
   ) %>%
   rename(estimate = Estimate)
 
-# add reference period manually — estimate is zero by construction
+# add reference period manually,  estimate is zero by construction
 ref_row <- data.frame(
   term = "reference",
   estimate = 0,
