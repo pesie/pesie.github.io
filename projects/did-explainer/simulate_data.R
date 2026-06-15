@@ -1,6 +1,6 @@
 # simulate_data.R --------------------------------------------------------
 # synthetic data for the DiD methods explainer
-# sourced by did_explainer.R — nothing is saved
+# sourced by did_explainer.R 
 # pesie.github.io/projects/did-explainer
 # author: precious esie
 
