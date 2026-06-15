@@ -401,4 +401,4 @@ The estimate is only as credible as the parallel trends assumption. And parallel
 :::
 
 ---
-*Code for this explainer is available on [GitHub](https://github.com/pesie/did-explainer).*
+*Code for this explainer is available on [GitHub](https://github.com/pesie/pesie.github.io/tree/master/projects/did-explainer/readme.md){target="_blank"}.*

@@ -18,7 +18,7 @@ The methods follow from the question. Some problems need causal inference. Other
 ### Explainers
 :::
 ::: featured-project
-[Difference-in-Differences: A Methods Explainer](projects/did-explainer/did_explainer.qmd)
+[Difference-in-Differences: A Methods Explainer](projects/did-explainer.qmd)
 
 How DiD works, why parallel trends is the assumption that matters, and what the method can and can't tell you.
 
@@ -30,7 +30,7 @@ How DiD works, why parallel trends is the assumption that matters, and what the 
 :::
 
 ::: featured-project
-[Most People Feel Overwhelmed. Fewer Perceive Conflicting Guidance. Both Matter.](projects/hints_lca.qmd)
+[Most People Feel Overwhelmed. Fewer Perceive Conflicting Guidance. Both Matter.](projects/hints-lca.qmd)
 
 Using nationally representative survey data, this analysis identifies four ways people navigate health information and examines how those differences relate to trust and perceived care quality.
 
@@ -53,7 +53,7 @@ The choice between perceived and objective measures is a theoretical claim about
 :::
 
 ::: note-item
-[We Solve the Same Problems. We Just Use Different Words.](notes/epi_translation.qmd)
+[We Solve the Same Problems. We Just Use Different Words.](notes/epi-translation.qmd)
 
 Epidemiologic translations for common analytical questions.
 :::
