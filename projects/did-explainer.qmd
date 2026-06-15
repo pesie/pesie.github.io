@@ -383,10 +383,10 @@ A single DiD estimate provides a useful summary of the average treatment effect.
 
 The setup above assumes all treated states adopt at the same time. That's rarely true. Policies roll out at different times in different places, and when they do, the standard two-way fixed effects estimator can mislead. Earlier-treated units end up serving as controls for later-treated ones, which works only if those early adopters aren't already experiencing effects.
 
-Several estimators address this, including [Callaway and Sant'Anna (2021)](https://www.sciencedirect.com/science/article/abs/pii/S0304407620303948), which estimates effects separately by adoption cohort before aggregating.
+Several estimators address this, including [Callaway and Sant'Anna (2021)](https://www.sciencedirect.com/science/article/abs/pii/S0304407620303948){target="_blank"}, which estimates effects separately by adoption cohort before aggregating.
 
 ::: {.callout-note appearance="minimal"}
-I've worked through staggered DiD in practice. My analysis of state cannabis legalization and youth use spans 374 state-years and ran into exactly this problem. The code is available [here](https://github.com/pesie/yrbs-cannabis-did).
+I've worked through staggered DiD in practice. My analysis of state cannabis legalization and youth use spans 374 state-years and ran into exactly this problem. The code is available [here](https://github.com/pesie/yrbs-cannabis-did){target="_blank"}.
 :::
 
 :::
