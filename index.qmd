@@ -15,6 +15,17 @@ The methods follow from the question. Some problems need causal inference. Other
 :::
 
 ::: py-3
+### Explainers
+:::
+::: featured-project
+[Difference-in-Differences: A Methods Explainer](projects/did-explainer/did_explainer.qmd)
+
+How DiD works, why parallel trends is the assumption that matters, and what the method can and can't tell you.
+
+[Causal Inference · Simulation · Event Study]{.text-muted .small}
+:::
+
+::: py-3
 ### Selected Work
 :::
 
