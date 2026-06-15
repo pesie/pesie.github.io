@@ -6,7 +6,7 @@ date: "2026-06-16"
 format:
   html:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
     code-fold: true
     code-summary: "Show code"
     fig-width: 8

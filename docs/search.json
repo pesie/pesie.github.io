@@ -30,28 +30,28 @@
   {
     "objectID": "projects/did-explainer/readme.html",
     "href": "projects/did-explainer/readme.html",
-    "title": "Difference-in-Differences: A Methods Explainer",
+    "title": "difference-in-differences: a methods explainer",
     "section": "",
-    "text": "Simulation code for the DiD explainer at pesie.github.io.\n\n\n\nsimulate_data.R — generates the synthetic panel dataset\ndid_explainer.R — estimates DiD models and produces figures\n\n\n\n\nRun did_explainer.R. It sources simulate_data.R automatically.\n\n\n\ndplyr, tidyr, ggplot2, fixest"
+    "text": "simulation code for the DiD explainer at pesie.github.io.\n\n\n\nsimulate_data.R — generates the synthetic panel dataset\ndid_explainer.R — estimates DiD models and produces figures\n\n\n\n\nRun did_explainer.R. It sources simulate_data.R automatically.\n\n\n\ndplyr, tidyr, ggplot2, fixest"
   },
   {
     "objectID": "projects/did-explainer/readme.html#files",
     "href": "projects/did-explainer/readme.html#files",
-    "title": "Difference-in-Differences: A Methods Explainer",
+    "title": "difference-in-differences: a methods explainer",
     "section": "",
     "text": "simulate_data.R — generates the synthetic panel dataset\ndid_explainer.R — estimates DiD models and produces figures"
   },
   {
-    "objectID": "projects/did-explainer/readme.html#usage",
-    "href": "projects/did-explainer/readme.html#usage",
-    "title": "Difference-in-Differences: A Methods Explainer",
+    "objectID": "projects/did-explainer/readme.html#to-use",
+    "href": "projects/did-explainer/readme.html#to-use",
+    "title": "difference-in-differences: a methods explainer",
     "section": "",
     "text": "Run did_explainer.R. It sources simulate_data.R automatically."
   },
   {
     "objectID": "projects/did-explainer/readme.html#dependencies",
     "href": "projects/did-explainer/readme.html#dependencies",
-    "title": "Difference-in-Differences: A Methods Explainer",
+    "title": "difference-in-differences: a methods explainer",
     "section": "",
     "text": "dplyr, tidyr, ggplot2, fixest"
   },

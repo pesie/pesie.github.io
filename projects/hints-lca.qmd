@@ -33,7 +33,7 @@ The scale of that difficulty is visible in the data. In 2024, about 70% of U.S. 
 
 These are not fringe views. They are the dominant experience.
 
-The [Health Information National Trends Survey (HINTS)](https://hints.cancer.gov/data/survey-instruments.aspx#H7SurvMat) offers a way to examine that experience. HINTS is a nationally representative survey from the National Cancer Institute that asks U.S. adults about health information seeking, cancer-related knowledge and behaviors, provider communication, source trust, and health information use.
+The [Health Information National Trends Survey (HINTS)](https://hints.cancer.gov/data/survey-instruments.aspx#H7SurvMat){target="_blank"} offers a way to examine that experience. HINTS is a nationally representative survey from the National Cancer Institute that asks U.S. adults about health information seeking, cancer-related knowledge and behaviors, provider communication, source trust, and health information use.
 
 The survey includes several questions about what it feels like to navigate health recommendations. Looking at those questions, two themes emerged: whether expert guidance seems inconsistent or contradictory, and whether the volume of recommendations feels overwhelming. Although these experiences may seem similar, they are not necessarily the same thing. Someone can trust experts but still feel overwhelmed by the volume of information. Others may feel less burdened by volume but question the consistency of what they hear.
 
