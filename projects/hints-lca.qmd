@@ -1,6 +1,6 @@
 ---
-title: "Trust and Quality of Care Depend on How People Experience Health Information"
-subtitle: "How people experience health information helps explain differences in trust, perceived care quality, and what kind of communication support they may need."
+title: "Not All Health Information Overload Is the Same"
+subtitle: "Four distinct profiles from HINTS 7 show that how people experience health recommendations  links to trust and perceived quality of care."
 date: "2026-06-07"
 categories: [Latent Class Analysis, Behavioral Segmentation, Survey Research]
 description: ""
