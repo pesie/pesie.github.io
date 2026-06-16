@@ -1,7 +1,6 @@
 ---
 title: "&nbsp;"
-og:
-  title: "Precious Esie, PhD"
+pagetitle: "Precious Esie, PhD"
 ---
 ### I use population data to make sense of why outcomes differ across people and places.
 
