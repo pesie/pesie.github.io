@@ -30,11 +30,11 @@ But some constructs don't work that way. A person's perception of safety is rela
 
 ### Consider the discordant cases
 
-Take two people living in the same neighborhood. The available objective indicators are the same — the same recorded crime rate, the same sidewalks, the same lighting, the same local resources. But subjective measures differ. One feels safe walking alone at night, the other does not.
+Take two people living in the same neighborhood. The available objective indicators are the same. They have the same recorded crime rate, the same sidewalks, the same lighting, the same local resources. But subjective measures differ. One feels safe walking alone at night, the other does not.
 
-The person who feels unsafe may avoid walking outside, limit contact with neighbors, or underuse local resources, regardless of what crime statistics say. In that case, perceived safety is not a weaker version of the objective measure. It may be closer to the mechanism you are actually trying to understand.
+The person who feels unsafe may avoid walking outside, limit contact with neighbors, or underuse local resources, regardless of what crime statistics say. In that case, perceived safety is not a weaker version of the objective measure. It might actually be closer to the mechanism you are actually trying to understand.
 
-This is why the discordant cases are worth paying attention to. When someone perceives high risk despite low objective risk, or strong social support despite weak objective support, it forces a different question. Not which measure is correct, but which measure is most relevant to the mechanism you care about.
+This is why the discordant cases are worth paying attention to. When someone perceives high risk despite low objective risk, or strong social support despite weak objective support, the relevant question becomes which measure is most relevant to the mechanism we care about.
 :::
 
 ::: {.py-2}

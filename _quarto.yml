@@ -16,6 +16,9 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/precious-esie
         target: _blank
+      - icon: github
+        href: https://github.com/pesie
+        target: _blank
   page-footer:
     center: "© 2026 Precious Esie · Made with [Quarto](https://quarto.org)"
 format:

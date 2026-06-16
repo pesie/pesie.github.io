@@ -720,7 +720,7 @@ That said, the analysis suggests that people's experiences of the health informa
 
 ---
 
-*Full analysis code available on [GitHub](https://github.com/pesie/pesie.github.io/blob/master/projects/hintsLCA/hints-LCA-analysis.R){target="_blank"}.*
+*Full analysis code available on [GitHub](https://github.com/pesie/hints-lca/blob/master/hints-LCA-analysis.R){target="_blank"}.*
 
 ### Appendix
 
