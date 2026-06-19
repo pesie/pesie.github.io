@@ -30,6 +30,4 @@ PhD, Epidemiology — Columbia University, 2022\
 MPH, Epidemiology — Emory University, 2016\
 BS, Mathematics — Loyola University New Orleans, 2013
 
-Currently based in Atlanta, GA.
-
 [View my publications →](publications.qmd)
